@@ -45,6 +45,7 @@ class AiFreePage(QDialog, aiFreePage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(goBackPage)
         self.logout_btn.clicked.connect(goBackPage)
+        self.ai_btn.clicked.connect(goNextPage)
         self.free_btn.clicked.connect(goNextPage)
 
 class SelExercisePage(QDialog, selExercisePage):
