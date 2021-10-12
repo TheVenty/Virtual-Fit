@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="back">
+    <file>./img/배경.png</file>
+  </qresource>
+  <qresource prefix="button">
+    <file>./img/입력창 버튼.png</file>
+    <file>./img/패스버튼.png</file>
+  </qresource>
+</RCC>
