@@ -72,16 +72,16 @@ if __name__ == '__main__':
 
     #QstackedWidget 기능 연결 및 인스턴스 생성
     widget = QtWidgets.QStackedWidget()
-    s_loginpage = LoginPage()
-    s_aifreepage = AiFreePage()
-    s_slectexercisepage = SelExercisePage()
-    s_posepage = PosePage()
+    s_loginPage = LoginPage()
+    s_aiFreePage = AiFreePage()
+    s_selExercisePage = SelExercisePage()
+    s_posePage = PosePage()
 
     #widget에 모든 페이지 추가
-    widget.addWidget(s_loginpage)
-    widget.addWidget(s_aifreepage)
-    widget.addWidget(s_slectexercisepage)
-    widget.addWidget(s_posepage)
+    widget.addWidget(s_loginPage)
+    widget.addWidget(s_aiFreePage)
+    widget.addWidget(s_selExercisePage)
+    widget.addWidget(s_posePage)
 
     #widget 크기와 보여주는 함수
     widget.setFixedHeight(830)
