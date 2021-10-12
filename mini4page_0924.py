@@ -5,6 +5,10 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 import logging.handlers
 
+# hi hamster
+# IM seung
+
+
 #로그 생성
 logger = logging.getLogger()
 fileMaxByte = 1024 * 1024 * 10
