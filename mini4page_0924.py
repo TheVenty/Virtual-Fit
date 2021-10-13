@@ -19,6 +19,8 @@ loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_loginpage_1.ui
 aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_aifreepage.ui'))[0]
 selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_slectexercisepage.ui'))[0]
 posePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_posepage.ui'))[0]
+weightPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_weightpage.ui'))[0]
+
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
@@ -57,13 +59,24 @@ class SelExercisePage(QDialog, selExercisePage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(2))
 
+
 class PosePage(QDialog, posePage):
     def __init__(self):
         super(PosePage, self).__init__()
         self.setupUi(self)
 
+        self.weight_btn.clicked.connect(goNextPage)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(3))
+
+#중량 선택 페이지 삽입_211013
+class WeightPage(QDialog, weightPage):
+    def __init__(self):
+        super(WeightPage, self).__init__()
+        self.setupUi(self)
+
+        self.back_btn.clicked.connect(goBackPage)
+        self.home_btn.clicked.connect(lambda: goHomePage(4))
 
 
 #이하 main 코드
@@ -77,12 +90,15 @@ if __name__ == '__main__':
     s_aiFreePage = AiFreePage()
     s_selExercisePage = SelExercisePage()
     s_posePage = PosePage()
+    s_weightPage = WeightPage()
+
 
     #widget에 모든 페이지 추가
     widget.addWidget(s_loginPage)
     widget.addWidget(s_aiFreePage)
     widget.addWidget(s_selExercisePage)
     widget.addWidget(s_posePage)
+    widget.addWidget(s_weightPage)
 
     #widget 크기와 보여주는 함수
     widget.setFixedHeight(830)

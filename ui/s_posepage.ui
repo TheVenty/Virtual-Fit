@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>467</width>
-    <height>830</height>
+    <height>829</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../page4resource.qrc">:/back/4.배경.png</pixmap>
+    <pixmap>:/back/4.배경.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="trainer_btn">
