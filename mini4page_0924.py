@@ -20,6 +20,7 @@ aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_aifreepage.ui
 selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_slectexercisepage.ui'))[0]
 posePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_posepage.ui'))[0]
 weightPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_weightpage.ui'))[0]
+planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_planpopup.ui'))[0]
 
 
 def goNextPage():
@@ -75,8 +76,34 @@ class WeightPage(QDialog, weightPage):
         super(WeightPage, self).__init__()
         self.setupUi(self)
 
+        self.setplan_btn.clicked.connect(goNextPage)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(4))
+
+#운동 Plan Pop Up 창 삽입_211014 - resetPlan 버튼 누를 시 꺼짐 현상. 원인 모르겠음.
+class PlanPopup(QDialog, planPopup):
+    def __init__(self):
+        super(PlanPopup, self).__init__()
+        self.setupUi(self)
+
+        self.back_btn.clicked.connect(goBackPage)
+        self.reset_btn.clicked.connect(self.resetPlan)
+
+        #슬라이드 바의 시그널 사용
+        self.set_bar.valueChanged.connect(self.showSetValue)
+        self.rep_bar.valueChanged.connect(self.showRepValue)
+
+    #슬라이드 바의 시그널 이용 - 슬라이드 바의 값이 변경되면 해당 라벨에 값을 표시    
+    def showSetValue(self) :
+     self.set_lb.setText(str(self.set_bar.value()))
+
+    def showRepValue(self) :
+        self.rep_lb.setText(str(self.rep_bar.value()))
+
+    def resetPlan(self):
+        self.set_lb.setValue(4)
+        self.rep_lb.setValue(12)
+
 
 
 #이하 main 코드
@@ -86,19 +113,23 @@ if __name__ == '__main__':
 
     #QstackedWidget 기능 연결 및 인스턴스 생성
     widget = QtWidgets.QStackedWidget()
-    s_loginPage = LoginPage()
-    s_aiFreePage = AiFreePage()
-    s_selExercisePage = SelExercisePage()
-    s_posePage = PosePage()
-    s_weightPage = WeightPage()
+    loginPage = LoginPage()
+    aiFreePage = AiFreePage()
+    selExercisePage = SelExercisePage()
+    posePage = PosePage()
+    weightPage = WeightPage()
+    planPopup = PlanPopup()
+
+
 
 
     #widget에 모든 페이지 추가
-    widget.addWidget(s_loginPage)
-    widget.addWidget(s_aiFreePage)
-    widget.addWidget(s_selExercisePage)
-    widget.addWidget(s_posePage)
-    widget.addWidget(s_weightPage)
+    widget.addWidget(loginPage)
+    widget.addWidget(aiFreePage)
+    widget.addWidget(selExercisePage)
+    widget.addWidget(posePage)
+    widget.addWidget(weightPage)
+    widget.addWidget(planPopup)
 
     #widget 크기와 보여주는 함수
     widget.setFixedHeight(830)
