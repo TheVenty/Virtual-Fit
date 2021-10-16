@@ -14,11 +14,20 @@ fileHandler.setFormatter(formatter)
 logger.addHandler(fileHandler)
 logger.setLevel(logging.DEBUG)
 
-#임포트 완료 - ui연결
-loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_loginpage_1.ui'))[0]
-aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_aifreepage.ui'))[0]
-selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_slectexercisepage.ui'))[0]
-posePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_posepage.ui'))[0]
+
+
+try :
+    #임포트 완료 - ui연결
+    loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_loginpage_1.ui'))[0]
+    aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_aifreepage.ui'))[0]
+    selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_slectexercisepage.ui'))[0]
+    posePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_posepage.ui'))[0]
+except FileNotFoundError :
+    #kimsungsoo 경로 예외 추가
+    loginPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_loginpage_1.ui'))[0]
+    aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_aifreepage.ui'))[0]
+    selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_slectexercisepage.ui'))[0]
+    posePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_posepage.ui'))[0]
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
