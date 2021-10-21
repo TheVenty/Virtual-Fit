@@ -173,6 +173,11 @@ if __name__ == '__main__':
     widget.addWidget(weightPage)
     widget.addWidget(planPopup)
 
+    #widget 크기와 보여주는 함수
+    widget.setFixedHeight(830)
+    widget.setFixedWidth(467)
+    widget.show()
+
 
     try:
         sys.exit(app.exec_())
