@@ -75,7 +75,8 @@ class PosePage(QDialog, posePage):
     def __init__(self):
         super(PosePage, self).__init__()
         self.setupUi(self)
-
+        
+        self.weight_btn.clicked.connect(goNextPage)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(3))
 
@@ -157,21 +158,21 @@ if __name__ == '__main__':
 
     #QstackedWidget 기능 연결 및 인스턴스 생성
     widget = QtWidgets.QStackedWidget()
-    s_loginPage = LoginPage()
-    s_aiFreePage = AiFreePage()
-    s_selExercisePage = SelExercisePage()
-    s_posePage = PosePage()
+    loginPage = LoginPage()
+    aiFreePage = AiFreePage()
+    selExercisePage = SelExercisePage()
+    posePage = PosePage()
+    weightPage = WeightPage()
+    planPopup = PlanPopup()
 
     #widget에 모든 페이지 추가
-    widget.addWidget(s_loginPage)
-    widget.addWidget(s_aiFreePage)
-    widget.addWidget(s_selExercisePage)
-    widget.addWidget(s_posePage)
+    widget.addWidget(loginPage)
+    widget.addWidget(aiFreePage)
+    widget.addWidget(selExercisePage)
+    widget.addWidget(posePage)
+    widget.addWidget(weightPage)
+    widget.addWidget(planPopup)
 
-    #widget 크기와 보여주는 함수
-    widget.setFixedHeight(830)
-    widget.setFixedWidth(467)
-    widget.show()
 
     try:
         sys.exit(app.exec_())
