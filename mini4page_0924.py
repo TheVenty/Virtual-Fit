@@ -34,7 +34,7 @@ class LoginPage(QDialog, loginPage):
         super(LoginPage, self).__init__()
         self.setupUi(self)
 
-        self.login_btn.clicked.connect(goNextPage)
+        #self.login_btn.clicked.connect(goNextPage)
         self.pass_btn.clicked.connect(goNextPage)
 
 class AiFreePage(QDialog, aiFreePage):
@@ -45,7 +45,7 @@ class AiFreePage(QDialog, aiFreePage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(goBackPage)
         self.logout_btn.clicked.connect(goBackPage)
-        self.ai_btn.clicked.connect(goNextPage)
+        #self.ai_btn.clicked.connect(goNextPage)
         self.free_btn.clicked.connect(goNextPage)
 
 class SelExercisePage(QDialog, selExercisePage):

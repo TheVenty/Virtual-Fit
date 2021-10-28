@@ -5652,3 +5652,1095 @@
 2021-10-12 16:04:11;[DEBUG];new topwidget Dialog
 2021-10-12 16:04:11;[DEBUG];pop widget QDialog Dialog
 2021-10-12 16:04:11;[DEBUG];new topwidget None
+2021-10-12 16:15:58;[DEBUG];uiname is Dialog
+2021-10-12 16:15:58;[DEBUG];toplevel widget is QDialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property minimumSize
+2021-10-12 16:15:58;[DEBUG];setting property maximumSize
+2021-10-12 16:15:58;[DEBUG];setting property windowTitle
+2021-10-12 16:15:58;[DEBUG];push QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];setting property pixmap
+2021-10-12 16:15:58;[DEBUG];push QLabel label
+2021-10-12 16:15:58;[DEBUG];pop widget QLabel label
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton login_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton login_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton pass_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton pass_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];pop widget QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];new topwidget None
+2021-10-12 16:15:58;[DEBUG];uiname is Dialog
+2021-10-12 16:15:58;[DEBUG];toplevel widget is QDialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property windowTitle
+2021-10-12 16:15:58;[DEBUG];push QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];setting property pixmap
+2021-10-12 16:15:58;[DEBUG];push QLabel label
+2021-10-12 16:15:58;[DEBUG];pop widget QLabel label
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton home_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton home_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton back_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton back_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton tip_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton tip_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton ai_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton ai_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton free_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton free_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton logout_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton logout_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];pop widget QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];new topwidget None
+2021-10-12 16:15:58;[DEBUG];uiname is Dialog
+2021-10-12 16:15:58;[DEBUG];toplevel widget is QDialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property windowTitle
+2021-10-12 16:15:58;[DEBUG];push QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];setting property pixmap
+2021-10-12 16:15:58;[DEBUG];push QLabel label
+2021-10-12 16:15:58;[DEBUG];pop widget QLabel label
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton home_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton home_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton back_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton back_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton tip_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton tip_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton legback_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton legback_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton all_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton all_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton legfront_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton legfront_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton legout_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton legout_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton legin_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton legin_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];pop widget QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];new topwidget None
+2021-10-12 16:15:58;[DEBUG];uiname is Dialog
+2021-10-12 16:15:58;[DEBUG];toplevel widget is QDialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property windowTitle
+2021-10-12 16:15:58;[DEBUG];push QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];setting property pixmap
+2021-10-12 16:15:58;[DEBUG];push QLabel label
+2021-10-12 16:15:58;[DEBUG];pop widget QLabel label
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton trainer_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton trainer_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton weight_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton weight_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton back_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton back_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton home_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton home_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];setting property geometry
+2021-10-12 16:15:58;[DEBUG];setting property styleSheet
+2021-10-12 16:15:58;[DEBUG];setting property text
+2021-10-12 16:15:58;[DEBUG];push QPushButton tip_btn
+2021-10-12 16:15:58;[DEBUG];pop widget QPushButton tip_btn
+2021-10-12 16:15:58;[DEBUG];new topwidget Dialog
+2021-10-12 16:15:58;[DEBUG];pop widget QDialog Dialog
+2021-10-12 16:15:58;[DEBUG];new topwidget None
+2021-10-13 09:43:50;[DEBUG];uiname is Dialog
+2021-10-13 09:43:50;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property minimumSize
+2021-10-13 09:43:50;[DEBUG];setting property maximumSize
+2021-10-13 09:43:50;[DEBUG];setting property windowTitle
+2021-10-13 09:43:50;[DEBUG];push QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];setting property pixmap
+2021-10-13 09:43:50;[DEBUG];push QLabel label
+2021-10-13 09:43:50;[DEBUG];pop widget QLabel label
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton login_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton login_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton pass_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton pass_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];new topwidget None
+2021-10-13 09:43:50;[DEBUG];uiname is Dialog
+2021-10-13 09:43:50;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property windowTitle
+2021-10-13 09:43:50;[DEBUG];push QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];setting property pixmap
+2021-10-13 09:43:50;[DEBUG];push QLabel label
+2021-10-13 09:43:50;[DEBUG];pop widget QLabel label
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton home_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton back_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton ai_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton ai_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton free_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton free_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton logout_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton logout_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];new topwidget None
+2021-10-13 09:43:50;[DEBUG];uiname is Dialog
+2021-10-13 09:43:50;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property windowTitle
+2021-10-13 09:43:50;[DEBUG];push QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];setting property pixmap
+2021-10-13 09:43:50;[DEBUG];push QLabel label
+2021-10-13 09:43:50;[DEBUG];pop widget QLabel label
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton home_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton back_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton legback_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton legback_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton all_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton all_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton legfront_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton legfront_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton legout_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton legout_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton legin_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton legin_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];new topwidget None
+2021-10-13 09:43:50;[DEBUG];uiname is Dialog
+2021-10-13 09:43:50;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property windowTitle
+2021-10-13 09:43:50;[DEBUG];push QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];setting property pixmap
+2021-10-13 09:43:50;[DEBUG];push QLabel label
+2021-10-13 09:43:50;[DEBUG];pop widget QLabel label
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton trainer_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton trainer_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton weight_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton weight_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton back_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton home_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];setting property geometry
+2021-10-13 09:43:50;[DEBUG];setting property styleSheet
+2021-10-13 09:43:50;[DEBUG];setting property text
+2021-10-13 09:43:50;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:43:50;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:43:50;[DEBUG];new topwidget Dialog
+2021-10-13 09:43:50;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:43:50;[DEBUG];new topwidget None
+2021-10-13 09:44:00;[DEBUG];uiname is Dialog
+2021-10-13 09:44:00;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property minimumSize
+2021-10-13 09:44:00;[DEBUG];setting property maximumSize
+2021-10-13 09:44:00;[DEBUG];setting property windowTitle
+2021-10-13 09:44:00;[DEBUG];push QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];setting property pixmap
+2021-10-13 09:44:00;[DEBUG];push QLabel label
+2021-10-13 09:44:00;[DEBUG];pop widget QLabel label
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton login_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton login_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton pass_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton pass_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];new topwidget None
+2021-10-13 09:44:00;[DEBUG];uiname is Dialog
+2021-10-13 09:44:00;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property windowTitle
+2021-10-13 09:44:00;[DEBUG];push QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];setting property pixmap
+2021-10-13 09:44:00;[DEBUG];push QLabel label
+2021-10-13 09:44:00;[DEBUG];pop widget QLabel label
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton home_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton back_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton ai_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton ai_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton free_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton free_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton logout_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton logout_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];new topwidget None
+2021-10-13 09:44:00;[DEBUG];uiname is Dialog
+2021-10-13 09:44:00;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property windowTitle
+2021-10-13 09:44:00;[DEBUG];push QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];setting property pixmap
+2021-10-13 09:44:00;[DEBUG];push QLabel label
+2021-10-13 09:44:00;[DEBUG];pop widget QLabel label
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton home_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton back_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton legback_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton legback_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton all_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton all_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton legfront_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton legfront_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton legout_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton legout_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton legin_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton legin_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];new topwidget None
+2021-10-13 09:44:00;[DEBUG];uiname is Dialog
+2021-10-13 09:44:00;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property windowTitle
+2021-10-13 09:44:00;[DEBUG];push QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];setting property pixmap
+2021-10-13 09:44:00;[DEBUG];push QLabel label
+2021-10-13 09:44:00;[DEBUG];pop widget QLabel label
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton trainer_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton trainer_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton weight_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton weight_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton back_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton home_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];setting property geometry
+2021-10-13 09:44:00;[DEBUG];setting property styleSheet
+2021-10-13 09:44:00;[DEBUG];setting property text
+2021-10-13 09:44:00;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:44:00;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:44:00;[DEBUG];new topwidget Dialog
+2021-10-13 09:44:00;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:44:00;[DEBUG];new topwidget None
+2021-10-13 09:50:18;[DEBUG];uiname is Dialog
+2021-10-13 09:50:18;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property minimumSize
+2021-10-13 09:50:18;[DEBUG];setting property maximumSize
+2021-10-13 09:50:18;[DEBUG];setting property windowTitle
+2021-10-13 09:50:18;[DEBUG];push QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];setting property pixmap
+2021-10-13 09:50:18;[DEBUG];push QLabel label
+2021-10-13 09:50:18;[DEBUG];pop widget QLabel label
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton login_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton login_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton pass_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton pass_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];new topwidget None
+2021-10-13 09:50:18;[DEBUG];uiname is Dialog
+2021-10-13 09:50:18;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property windowTitle
+2021-10-13 09:50:18;[DEBUG];push QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];setting property pixmap
+2021-10-13 09:50:18;[DEBUG];push QLabel label
+2021-10-13 09:50:18;[DEBUG];pop widget QLabel label
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton home_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton back_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton ai_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton ai_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton free_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton free_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton logout_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton logout_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];new topwidget None
+2021-10-13 09:50:18;[DEBUG];uiname is Dialog
+2021-10-13 09:50:18;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property windowTitle
+2021-10-13 09:50:18;[DEBUG];push QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];setting property pixmap
+2021-10-13 09:50:18;[DEBUG];push QLabel label
+2021-10-13 09:50:18;[DEBUG];pop widget QLabel label
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton home_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton back_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton legback_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton legback_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton all_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton all_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton legfront_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton legfront_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton legout_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton legout_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton legin_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton legin_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];new topwidget None
+2021-10-13 09:50:18;[DEBUG];uiname is Dialog
+2021-10-13 09:50:18;[DEBUG];toplevel widget is QDialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property windowTitle
+2021-10-13 09:50:18;[DEBUG];push QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];setting property pixmap
+2021-10-13 09:50:18;[DEBUG];push QLabel label
+2021-10-13 09:50:18;[DEBUG];pop widget QLabel label
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton trainer_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton trainer_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton weight_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton weight_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton back_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton back_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton home_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton home_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];setting property geometry
+2021-10-13 09:50:18;[DEBUG];setting property styleSheet
+2021-10-13 09:50:18;[DEBUG];setting property text
+2021-10-13 09:50:18;[DEBUG];push QPushButton tip_btn
+2021-10-13 09:50:18;[DEBUG];pop widget QPushButton tip_btn
+2021-10-13 09:50:18;[DEBUG];new topwidget Dialog
+2021-10-13 09:50:18;[DEBUG];pop widget QDialog Dialog
+2021-10-13 09:50:18;[DEBUG];new topwidget None
+2021-10-28 15:15:32;[DEBUG];uiname is Dialog
+2021-10-28 15:15:32;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property minimumSize
+2021-10-28 15:15:32;[DEBUG];setting property maximumSize
+2021-10-28 15:15:32;[DEBUG];setting property windowTitle
+2021-10-28 15:15:32;[DEBUG];push QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];setting property pixmap
+2021-10-28 15:15:32;[DEBUG];push QLabel label
+2021-10-28 15:15:32;[DEBUG];pop widget QLabel label
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton login_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton login_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton pass_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton pass_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];new topwidget None
+2021-10-28 15:15:32;[DEBUG];uiname is Dialog
+2021-10-28 15:15:32;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property windowTitle
+2021-10-28 15:15:32;[DEBUG];push QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];setting property pixmap
+2021-10-28 15:15:32;[DEBUG];push QLabel label
+2021-10-28 15:15:32;[DEBUG];pop widget QLabel label
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton home_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton home_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton back_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton back_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton tip_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton tip_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton ai_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton ai_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton free_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton free_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton logout_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton logout_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];new topwidget None
+2021-10-28 15:15:32;[DEBUG];uiname is Dialog
+2021-10-28 15:15:32;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property windowTitle
+2021-10-28 15:15:32;[DEBUG];push QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];setting property pixmap
+2021-10-28 15:15:32;[DEBUG];push QLabel label
+2021-10-28 15:15:32;[DEBUG];pop widget QLabel label
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton home_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton home_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton back_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton back_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton tip_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton tip_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton legback_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton legback_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton all_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton all_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton legfront_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton legfront_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton legout_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton legout_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton legin_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton legin_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];new topwidget None
+2021-10-28 15:15:32;[DEBUG];uiname is Dialog
+2021-10-28 15:15:32;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property windowTitle
+2021-10-28 15:15:32;[DEBUG];push QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];setting property pixmap
+2021-10-28 15:15:32;[DEBUG];push QLabel label
+2021-10-28 15:15:32;[DEBUG];pop widget QLabel label
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton trainer_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton trainer_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton weight_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton weight_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton back_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton back_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton home_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton home_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];setting property geometry
+2021-10-28 15:15:32;[DEBUG];setting property styleSheet
+2021-10-28 15:15:32;[DEBUG];setting property text
+2021-10-28 15:15:32;[DEBUG];push QPushButton tip_btn
+2021-10-28 15:15:32;[DEBUG];pop widget QPushButton tip_btn
+2021-10-28 15:15:32;[DEBUG];new topwidget Dialog
+2021-10-28 15:15:32;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:15:32;[DEBUG];new topwidget None
+2021-10-28 15:17:18;[DEBUG];uiname is Dialog
+2021-10-28 15:17:18;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property minimumSize
+2021-10-28 15:17:18;[DEBUG];setting property maximumSize
+2021-10-28 15:17:18;[DEBUG];setting property windowTitle
+2021-10-28 15:17:18;[DEBUG];push QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];setting property pixmap
+2021-10-28 15:17:18;[DEBUG];push QLabel label
+2021-10-28 15:17:18;[DEBUG];pop widget QLabel label
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton login_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton login_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton pass_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton pass_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];new topwidget None
+2021-10-28 15:17:18;[DEBUG];uiname is Dialog
+2021-10-28 15:17:18;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property windowTitle
+2021-10-28 15:17:18;[DEBUG];push QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];setting property pixmap
+2021-10-28 15:17:18;[DEBUG];push QLabel label
+2021-10-28 15:17:18;[DEBUG];pop widget QLabel label
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton home_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton home_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton back_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton back_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton tip_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton tip_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton ai_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton ai_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton free_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton free_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton logout_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton logout_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];new topwidget None
+2021-10-28 15:17:18;[DEBUG];uiname is Dialog
+2021-10-28 15:17:18;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property windowTitle
+2021-10-28 15:17:18;[DEBUG];push QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];setting property pixmap
+2021-10-28 15:17:18;[DEBUG];push QLabel label
+2021-10-28 15:17:18;[DEBUG];pop widget QLabel label
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton home_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton home_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton back_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton back_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton tip_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton tip_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton legback_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton legback_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton all_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton all_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton legfront_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton legfront_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton legout_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton legout_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton legin_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton legin_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];new topwidget None
+2021-10-28 15:17:18;[DEBUG];uiname is Dialog
+2021-10-28 15:17:18;[DEBUG];toplevel widget is QDialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property windowTitle
+2021-10-28 15:17:18;[DEBUG];push QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];setting property pixmap
+2021-10-28 15:17:18;[DEBUG];push QLabel label
+2021-10-28 15:17:18;[DEBUG];pop widget QLabel label
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton trainer_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton trainer_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton weight_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton weight_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton back_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton back_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton home_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton home_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];setting property geometry
+2021-10-28 15:17:18;[DEBUG];setting property styleSheet
+2021-10-28 15:17:18;[DEBUG];setting property text
+2021-10-28 15:17:18;[DEBUG];push QPushButton tip_btn
+2021-10-28 15:17:18;[DEBUG];pop widget QPushButton tip_btn
+2021-10-28 15:17:18;[DEBUG];new topwidget Dialog
+2021-10-28 15:17:18;[DEBUG];pop widget QDialog Dialog
+2021-10-28 15:17:18;[DEBUG];new topwidget None
