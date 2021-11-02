@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="385bb6a9-3ef5-43e8-8128-0473270971fa" name="Changes" comment="serial 통신">
+    <list default="true" id="385bb6a9-3ef5-43e8-8128-0473270971fa" name="Changes" comment="ui stylesheet 적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_main1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page1_login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page1_login.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page2_aifree.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page2_aifree.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page3_selectexercise.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page3_selectexercise.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/page4_pose.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page4_pose.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page5_trainer.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page5_trainer.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page6_weight.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page6_weight.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page7_exercising.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page7_exercising.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page8_rest.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page8_rest.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page9_finish.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page9_finish.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/s_planpopup.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/s_planpopup.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/virtual_Fit.log" beforeDir="false" afterPath="$PROJECT_DIR$/virtual_Fit.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635406378532</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ui stylesheet 적용">
+      <created>1635854242840</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635854242840</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +155,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="serial 통신" />
-    <option name="LAST_COMMIT_MESSAGE" value="serial 통신" />
+    <MESSAGE value="ui stylesheet 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui stylesheet 적용" />
   </component>
 </project>

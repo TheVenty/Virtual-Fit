@@ -1,7 +1,11 @@
 import sys
 import os
+
+import cv2
 from PyQt5 import uic
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
+from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QDialog, QApplication
 import logging.handlers
 
@@ -85,10 +89,26 @@ class PosePage(QDialog, posePage):
     def __init__(self):
         super(PosePage, self).__init__()
         self.setupUi(self)
-        
+
         self.weight_btn.clicked.connect(goNextPage)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(3))
+
+        self.streamingThread = StreamingThread()
+
+        self.startCam()
+
+    def startCam(self):
+        self.streamingThread.wait(1)
+        self.streamingThread.setRtsp(0)
+        self.streamingThread.setSize(self.label.size())
+        self.streamingThread.changePixmap.connect(self.setImage)
+        self.streamingThread.start()
+        self.show()
+
+    @pyqtSlot(QImage)
+    def setImage(self, image):
+        self.label.setPixmap(QPixmap.fromImage(image))
 
 #5 트레이너 설명 페이지 삽입_211102
 class TrainerPage(QDialog, trainerPage):
@@ -153,15 +173,57 @@ class PlanPopup(QDialog, planPopup):
         self.rep_bar.valueChanged.connect(self.showRepValue)
 
     #슬라이드 바의 시그널 이용 - 슬라이드 바의 값이 변경되면 해당 라벨에 값을 표시    
-    def showSetValue(self) :
+    def showSetValue(self):
      self.set_lb.setText(str(self.set_bar.value()))
 
-    def showRepValue(self) :
+    def showRepValue(self):
         self.rep_lb.setText(str(self.rep_bar.value()))
 
     def resetPlan(self):
         self.set_lb.setValue(4)
         self.rep_lb.setValue(12)
+
+class StreamingThread(QThread):
+    changePixmap = pyqtSignal(QImage)
+
+    def __init__(self):
+        super().__init__()
+        self.running = True
+        self.camUrl = ""
+        self.Qsize = None
+        self.cap = None
+
+    def setRtsp(self, camUrl):
+        self.camUrl = camUrl
+        self.running = True
+
+    def setSize(self, Qsize):
+        self.Qsize = Qsize
+
+    def run(self):
+        try:
+            if self.camUrl != "":
+                self.cap = cv2.VideoCapture(self.camUrl)
+                while self.running:
+                    if self.cap.isOpened():
+                        success, frame = self.cap.read()
+                        if success:
+                            rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                            h, w, ch = rgbImage.shape
+                            bytesPerLine = ch * w
+                            convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format_RGB888)
+                            p = convertToQtFormat.scaled(self.Qsize, Qt.KeepAspectRatio)
+                            self.changePixmap.emit(p)
+                            QApplication.processEvents()
+            else:
+                self.stop()
+        except:
+            self.stop()
+
+    def stop(self):
+        if self.running:
+            self.running = False
+        self.quit()
 
 
 #이하 main 코드

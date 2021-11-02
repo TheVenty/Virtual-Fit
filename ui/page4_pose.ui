@@ -118,6 +118,10 @@ background-color: rgb(46, 52, 54);</string>
      <height>600</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(91, 91, 91);
+color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
     <string>View</string>
    </property>
