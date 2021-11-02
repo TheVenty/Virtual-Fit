@@ -6,103 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>467</width>
-    <height>830</height>
+    <width>1080</width>
+    <height>1920</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>6820</width>
+    <height>12120</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>467</width>
-     <height>830</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/back/3.배경.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../page3resource.qrc">:/back/3.배경.png</pixmap>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="home_btn">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>742</y>
-     <width>46</width>
-     <height>57</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/홈버튼 그룹.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="back_btn">
-   <property name="geometry">
-    <rect>
-     <x>49</x>
-     <y>754</y>
-     <width>33</width>
-     <height>45</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/뒤로가기 그룹.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tip_btn">
-   <property name="geometry">
-    <rect>
-     <x>387</x>
-     <y>749</y>
-     <width>43</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/팁버튼.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="legback_btn">
-   <property name="geometry">
-    <rect>
-     <x>174</x>
-     <y>184</y>
-     <width>121</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/허벅지 후면.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="all_btn">
    <property name="geometry">
     <rect>
-     <x>31</x>
-     <y>184</y>
-     <width>120</width>
-     <height>171</height>
+     <x>160</x>
+     <y>410</y>
+     <width>251</width>
+     <height>381</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -112,17 +41,33 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="legfront_btn">
+  <widget class="QPushButton" name="tip_btn">
    <property name="geometry">
     <rect>
-     <x>317</x>
-     <y>184</y>
-     <width>121</width>
-     <height>171</height>
+     <x>870</x>
+     <y>1750</y>
+     <width>101</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/허벅지 앞면.png);</string>
+    <string notr="true">border-image: url(:/button/팁버튼.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_btn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>1744</y>
+     <width>101</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/button/뒤로가기 그룹.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -131,10 +76,10 @@
   <widget class="QPushButton" name="legout_btn">
    <property name="geometry">
     <rect>
-     <x>258</x>
-     <y>376</y>
-     <width>120</width>
-     <height>171</height>
+     <x>560</x>
+     <y>820</y>
+     <width>261</width>
+     <height>391</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -144,13 +89,45 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="legback_btn">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>410</y>
+     <width>241</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/button/허벅지 후면.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="legfront_btn">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>410</y>
+     <width>261</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/button/허벅지 앞면.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="legin_btn">
    <property name="geometry">
     <rect>
-     <x>96</x>
-     <y>376</y>
-     <width>120</width>
-     <height>171</height>
+     <x>260</x>
+     <y>820</y>
+     <width>261</width>
+     <height>391</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -160,9 +137,23 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="home_btn">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>1680</y>
+     <width>141</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/button/홈버튼 그룹.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
- <resources>
-  <include location="../page3resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

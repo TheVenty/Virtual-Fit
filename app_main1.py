@@ -16,22 +16,29 @@ logger.setLevel(logging.DEBUG)
 
 try :
     #임포트 완료 - ui연결
-    loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_loginpage_1.ui'))[0]
-    aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_aifreepage.ui'))[0]
-    selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_slectexercisepage.ui'))[0]
-    posePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_posepage.ui'))[0]
-    weightPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_weightpage.ui'))[0]
+    loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page1_login.ui'))[0]
+    aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page2_aifree.ui'))[0]
+    selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page3_selectexercise.ui'))[0]
+    posePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page4_pose.ui'))[0]
+    trainerPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page5_trainer.ui'))[0]
+    weightPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page6_weight.ui'))[0]
+    exercisingPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page7_exercising.ui'))[0]
+    restPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page8_rest.ui'))[0]
+    finishPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page9_finish.ui'))[0]
     planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_planpopup.ui'))[0]
 
 except FileNotFoundError :
     #kimsungsoo 경로 예외 추가
-    loginPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_loginpage_1.ui'))[0]
-    aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_aifreepage.ui'))[0]
-    selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_slectexercisepage.ui'))[0]
-    posePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_posepage.ui'))[0]
-    weightPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_weightpage.ui'))[0]
+    loginPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_login.ui'))[0]
+    aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page2_aifree.ui'))[0]
+    selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page3_selectexercise.ui'))[0]
+    posePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page4_pose.ui'))[0]
+    trainerPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page5_trainer.ui'))[0]
+    weightPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page6_weight.ui'))[0]
+    exercisingPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page7_exercising.ui'))[0]
+    restPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page8_rest.ui'))[0]
+    finishPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page9_finish.ui'))[0]
     planPopup = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_planpopup.ui'))[0]
-
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
@@ -42,6 +49,7 @@ def goBackPage():
 def goHomePage(num):
     widget.setCurrentIndex(widget.currentIndex()-int(num))
 
+#1 로그인 페이지
 class LoginPage(QDialog, loginPage):
     def __init__(self):
         super(LoginPage, self).__init__()
@@ -50,6 +58,7 @@ class LoginPage(QDialog, loginPage):
         #self.login_btn.clicked.connect(goNextPage)
         self.pass_btn.clicked.connect(goNextPage)
 
+#2 ai free 선택 페이지
 class AiFreePage(QDialog, aiFreePage):
     def __init__(self):
         super(AiFreePage, self).__init__()
@@ -58,9 +67,10 @@ class AiFreePage(QDialog, aiFreePage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(goBackPage)
         self.logout_btn.clicked.connect(goBackPage)
-        #self.ai_btn.clicked.connect(goNextPage)
-        self.free_btn.clicked.connect(goNextPage)
+        self.ai_btn.clicked.connect(goNextPage)
+        #self.free_btn.clicked.connect(goNextPage)
 
+#3 운동자세 선택 페이지
 class SelExercisePage(QDialog, selExercisePage):
     def __init__(self):
         super(SelExercisePage, self).__init__()
@@ -70,6 +80,7 @@ class SelExercisePage(QDialog, selExercisePage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(2))
 
+#4 자세 피드백 영상 페이지
 class PosePage(QDialog, posePage):
     def __init__(self):
         super(PosePage, self).__init__()
@@ -79,7 +90,16 @@ class PosePage(QDialog, posePage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(3))
 
-#윤성근 중량 선택 페이지 삽입_211013
+#5 트레이너 설명 페이지 삽입_211102
+class TrainerPage(QDialog, trainerPage):
+    def __init__(self):
+        super(TrainerPage, self).__init__()
+        self.setupUi(self)
+
+        self.back_btn.clicked.connect(goBackPage)
+        self.home_btn.clicked.connect(lambda: goHomePage(4))
+
+#6 중량 선택 페이지 순서 수정
 class WeightPage(QDialog, weightPage):
     def __init__(self):
         super(WeightPage, self).__init__()
@@ -87,41 +107,36 @@ class WeightPage(QDialog, weightPage):
 
         self.setplan_btn.clicked.connect(goNextPage)
         self.back_btn.clicked.connect(goBackPage)
-        self.home_btn.clicked.connect(lambda: goHomePage(4))
+        self.home_btn.clicked.connect(lambda: goHomePage(5))
 
-#윤성근 무게 설정 버튼 기능 삽입_211015
-        self.kg10_btn.clicked.connect(kg10Method)
-        self.kg50_btn.clicked.connect(kg50Method)
-        self.kg100_btn.clicked.connect(kg100Method)
-        self.kg200_btn.clicked.connect(kg200Method)
-        self.kg400_btn.clicked.connect(kg400Method)
+#윤성근 무게 설정 버튼 기능 제거_211102 - 다이얼로 변환해야함.
 
+#7 운동중 페이지
+class ExercisingPage(QDialog, exercisingPage):
+    def __init__(self):
+        super(ExercisingPage, self).__init__()
+        self.setupUi(self)
 
-def kg10Method(self) : 
-    kg10 = 10
-    kgValue = kg10
+        self.back_btn.clicked.connect(goBackPage)
+        self.home_btn.clicked.connect(lambda: goHomePage(6))
 
-    print(kgValue)
+#8 휴식 페이지
+class RestPage(QDialog, restPage):
+    def __init__(self):
+        super(RestPage, self).__init__()
+        self.setupUi(self)
 
-def kg50Method(self) : 
-    kgValue = kgValue + 50
+        self.back_btn.clicked.connect(goBackPage)
+        self.home_btn.clicked.connect(lambda: goHomePage(7))
 
-    print(kgValue)
+#9 운동 끝 페이지
+class FinishPage(QDialog, finishPage):
+    def __init__(self):
+        super(FinishPage, self).__init__()
+        self.setupUi(self)
 
-def kg100Method(self) : 
-    kgValue = kgValue + 100
-
-    print(kgValue)
-
-def kg200Method(self) : 
-    kgValue = kgValue + 200
-
-    print(kgValue)
-        
-def kg400Method(self) :
-    kgValue = kgValue + 400 
-
-    print(kgValue)
+        self.back_btn.clicked.connect(goBackPage)
+        self.home_btn.clicked.connect(lambda: goHomePage(8))
 
 
 #윤성근 운동 Plan Pop Up 창 삽입_211014 - resetPlan 버튼 누를 시 꺼짐 현상. 원인 모르겠음.
@@ -148,8 +163,6 @@ class PlanPopup(QDialog, planPopup):
         self.set_lb.setValue(4)
         self.rep_lb.setValue(12)
 
-
-
 #이하 main 코드
 if __name__ == '__main__':
     # Some setup for qt
@@ -161,7 +174,11 @@ if __name__ == '__main__':
     aiFreePage = AiFreePage()
     selExercisePage = SelExercisePage()
     posePage = PosePage()
+    trainerPage = TrainerPage()
     weightPage = WeightPage()
+    exercisingPage = ExercisingPage()
+    restpage = RestPage()
+    fisishpage = FinishPage()
     planPopup = PlanPopup()
 
     #widget에 모든 페이지 추가
@@ -169,12 +186,16 @@ if __name__ == '__main__':
     widget.addWidget(aiFreePage)
     widget.addWidget(selExercisePage)
     widget.addWidget(posePage)
+    widget.addWidget(trainerPage)
     widget.addWidget(weightPage)
-    widget.addWidget(planPopup)
+    widget.addWidget(exercisingPage)
+    widget.addWidget(restpage)
+    widget.addWidget(fisishpage)
+    widget.addWidget(planPopup)  
 
     #widget 크기와 보여주는 함수
-    widget.setFixedHeight(830)
-    widget.setFixedWidth(467)
+    widget.setFixedHeight(1080)
+    widget.setFixedWidth(1920)
     widget.show()
 
 
