@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(46, 52, 54);</string>
+  </property>
   <widget class="QPushButton" name="volume_btn">
    <property name="geometry">
     <rect>
@@ -48,10 +51,10 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/패스버튼.png);</string>
+    <string notr="true">color: rgb(255, 255, 255);border-image: url(:/button/패스버튼.png);</string>
    </property>
    <property name="text">
-    <string/>
+    <string>비회원으로 시작하기</string>
    </property>
   </widget>
   <widget class="QPushButton" name="login_btn">
@@ -64,10 +67,10 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/입력창 버튼.png);</string>
+    <string notr="true">color: rgb(255, 255, 255);border-image: url(:/button/입력창 버튼.png);</string>
    </property>
    <property name="text">
-    <string/>
+    <string>회원번호를 입력하세요</string>
    </property>
   </widget>
  </widget>

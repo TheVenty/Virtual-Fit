@@ -163,6 +163,7 @@ class PlanPopup(QDialog, planPopup):
         self.set_lb.setValue(4)
         self.rep_lb.setValue(12)
 
+
 #이하 main 코드
 if __name__ == '__main__':
     # Some setup for qt
@@ -194,10 +195,9 @@ if __name__ == '__main__':
     widget.addWidget(planPopup)  
 
     #widget 크기와 보여주는 함수
-    widget.setFixedHeight(1080)
-    widget.setFixedWidth(1920)
+    widget.setFixedHeight(1920)  # 높이
+    widget.setFixedWidth(1080)  # 너비
     widget.show()
-
 
     try:
         sys.exit(app.exec_())

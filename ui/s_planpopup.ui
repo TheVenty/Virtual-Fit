@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(46, 52, 54);</string>
+  </property>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
@@ -26,7 +30,7 @@
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>150</y>
+      <y>160</y>
       <width>41</width>
       <height>23</height>
      </rect>
@@ -45,7 +49,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>저장</string>
     </property>
    </widget>
    <widget class="QSlider" name="rep_bar">
@@ -90,7 +94,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>초기화</string>
     </property>
    </widget>
    <widget class="QSlider" name="set_bar">
@@ -122,7 +126,33 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>64</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>반복횟수</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>30</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SET</string>
     </property>
    </widget>
   </widget>
