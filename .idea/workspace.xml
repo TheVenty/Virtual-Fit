@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="385bb6a9-3ef5-43e8-8128-0473270971fa" name="Changes" comment="4page 작업">
+    <list default="true" id="385bb6a9-3ef5-43e8-8128-0473270971fa" name="Changes" comment="4page 캠 작업완료">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_main1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page1.1_keypad.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page1_keypad.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/page1_login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/page1_login.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/virtual_Fit.log" beforeDir="false" afterPath="$PROJECT_DIR$/virtual_Fit.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635855014436</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4page 캠 작업완료">
+      <created>1635923147122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635923147122</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +170,7 @@
     <MESSAGE value="serial 통신" />
     <MESSAGE value="ui stylesheet 적용" />
     <MESSAGE value="4page 작업" />
-    <option name="LAST_COMMIT_MESSAGE" value="4page 작업" />
+    <MESSAGE value="4page 캠 작업완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="4page 캠 작업완료" />
   </component>
 </project>

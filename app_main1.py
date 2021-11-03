@@ -67,11 +67,12 @@ class LoginPage(QDialog, loginPage):
         super(LoginPage, self).__init__()
         self.setupUi(self)
 
-        self.keypadPage = KeypadPage()
-
-        #self.login_btn.clicked.connect(goNextPage)
+        self.login_btn.clicked.connect(self.loginKeypadPage)
         self.pass_btn.clicked.connect(goNextPage)
 
+    def loginKeypadPage(self):
+        keypadPage = KeypadPage()
+        keypadPage.exec_()
 
 #2 ai free 선택 페이지
 class AiFreePage(QDialog, aiFreePage):
