@@ -1,10 +1,9 @@
 import sys
 import os
-
 import cv2
 from PyQt5 import uic
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
+from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QDialog, QApplication
 import logging.handlers
@@ -18,8 +17,8 @@ fileHandler.setFormatter(formatter)
 logger.addHandler(fileHandler)
 logger.setLevel(logging.DEBUG)
 
-try :
-    #임포트 완료 - ui연결
+try:  # 임포트 완료 - ui연결
+    keypadPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page1_keypad.ui'))[0]
     loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page1_login.ui'))[0]
     aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page2_aifree.ui'))[0]
     selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page3_selectexercise.ui'))[0]
@@ -31,8 +30,8 @@ try :
     finishPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page9_finish.ui'))[0]
     planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_planpopup.ui'))[0]
 
-except FileNotFoundError :
-    #kimsungsoo 경로 예외 추가
+except FileNotFoundError:    # kimsungsoo 경로 예외 추가
+    keypadPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_keypad.ui'))[0]
     loginPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_login.ui'))[0]
     aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page2_aifree.ui'))[0]
     selExercisePage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page3_selectexercise.ui'))[0]
@@ -50,8 +49,17 @@ def goNextPage():
 def goBackPage():
     widget.setCurrentIndex(widget.currentIndex()-1)
 
+def go6Page():
+    widget.setCurrentIndex(widget.currentIndex() + 2)
+
 def goHomePage(num):
     widget.setCurrentIndex(widget.currentIndex()-int(num))
+
+#1 키패드 페이지
+class KeypadPage(QDialog, keypadPage):
+    def __init__(self):
+        super(KeypadPage, self).__init__()
+        self.setupUi(self)
 
 #1 로그인 페이지
 class LoginPage(QDialog, loginPage):
@@ -59,8 +67,11 @@ class LoginPage(QDialog, loginPage):
         super(LoginPage, self).__init__()
         self.setupUi(self)
 
+        self.keypadPage = KeypadPage()
+
         #self.login_btn.clicked.connect(goNextPage)
         self.pass_btn.clicked.connect(goNextPage)
+
 
 #2 ai free 선택 페이지
 class AiFreePage(QDialog, aiFreePage):
@@ -90,7 +101,8 @@ class PosePage(QDialog, posePage):
         super(PosePage, self).__init__()
         self.setupUi(self)
 
-        self.weight_btn.clicked.connect(goNextPage)
+        self.trainer_btn.clicked.connect(goNextPage)
+        self.weight_btn.clicked.connect(go6Page)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(3))
 
@@ -99,6 +111,7 @@ class PosePage(QDialog, posePage):
         self.startCam()
 
     def startCam(self):
+        print("11")
         self.streamingThread.wait(1)
         self.streamingThread.setRtsp(0)
         self.streamingThread.setSize(self.label.size())
