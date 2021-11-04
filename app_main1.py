@@ -6,6 +6,9 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl
 from PyQt5.QtGui import QImage, QPixmap, QMovie
 from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt5 import QtWebEngineWidgets
+from PyQt5 import QtWebEngineCore
+from PyQt5.QtWebEngineWidgets import QWebEngineSettings
 import logging.handlers
 
 #로그 생성
@@ -132,6 +135,10 @@ class TrainerPage(QDialog, trainerPage):
 
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(4))
+
+        self.webview=QtWebEngineWidgets.QWebEngineView(self.widget)
+        self.webview.setUrl(QUrl("https://www.youtube.com/embed/FQ_A97PMrcQ?autoplay=1"))
+        self.webview.setGeometry(0, 0, 1000, 800)
 
         self.gif1 = QMovie('img/gif1.gif', QByteArray(), self)
         self.gif2 = QMovie('img/gif2.gif', QByteArray(), self)
