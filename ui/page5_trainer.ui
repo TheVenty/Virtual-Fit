@@ -42,32 +42,6 @@ background-color: rgb(46, 52, 54);</string>
     <string>MUTE</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="gif1_btn">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>1360</y>
-     <width>381</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>GIF 1</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="gif2_btn">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>1360</y>
-     <width>391</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>GIF 2</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="tip_btn">
    <property name="geometry">
     <rect>
@@ -185,6 +159,32 @@ background-color: rgb(46, 52, 54);</string>
    </property>
    <property name="text">
     <string>한 눈에 체크하기</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gif1_label">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>1360</y>
+     <width>380</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gif2_label">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>1360</y>
+     <width>390</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

@@ -1,10 +1,10 @@
 import sys
 import os
 import cv2
-from PyQt5 import uic
+from PyQt5 import uic, QtCore
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt
-from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl
+from PyQt5.QtGui import QImage, QPixmap, QMovie
 from PyQt5.QtWidgets import QDialog, QApplication
 import logging.handlers
 
@@ -132,6 +132,15 @@ class TrainerPage(QDialog, trainerPage):
 
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(4))
+
+        self.gif1 = QMovie('img/gif1.gif', QByteArray(), self)
+        self.gif2 = QMovie('img/gif2.gif', QByteArray(), self)
+
+        self.gif1_label.setMovie(self.gif1)
+        self.gif2_label.setMovie(self.gif2)
+
+        self.gif1.start()
+        self.gif2.start()
 
 #6 중량 선택 페이지 순서 수정
 class WeightPage(QDialog, weightPage):
