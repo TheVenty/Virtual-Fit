@@ -6,3 +6,4 @@ PyQt5-sip==12.9.0
 PyQtWebEngine==5.15.5
 PyQtWebEngine-Qt5==5.15.2
 youtube-dl==2021.6.6
+mediapipe
