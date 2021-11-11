@@ -187,7 +187,12 @@ class WeightPage(QDialog, weightPage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(5))
 
-#윤성근 무게 설정 버튼 기능 제거_211102 - 다이얼로 변환해야함.
+#211111_윤성근_다이얼- 라벨 연결.
+        self.weight_dial.valueChanged.connect(self.showWeight)        
+
+    def showWeight(self) :
+        self.kg_lb.setText(str(self.weight_dial.value()) + " KG")
+
 
 #7 운동중 페이지
 class ExercisingPage(QDialog, exercisingPage):

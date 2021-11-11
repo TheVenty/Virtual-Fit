@@ -125,6 +125,12 @@ background-color: rgb(46, 52, 54);</string>
      <height>141</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>600</number>
+   </property>
+   <property name="singleStep">
+    <number>10</number>
+   </property>
   </widget>
   <widget class="QLabel" name="kg_lb">
    <property name="geometry">
@@ -135,8 +141,14 @@ background-color: rgb(46, 52, 54);</string>
      <height>121</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>48</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>kg label</string>
+    <string>KG</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
