@@ -26,110 +26,251 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(46, 52, 54);</string>
+   <string notr="true">background-color: rgb(0,0,0);</string>
   </property>
   <widget class="QPushButton" name="back_btn">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>1675</y>
+     <x>70</x>
+     <y>1700</y>
      <width>111</width>
-     <height>131</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/뒤로가기 그룹.png);
+    <string notr="true">image: url(img/back_btn.png);
 color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
-    <string>BACK</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="free_btn">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>670</y>
-     <width>361</width>
-     <height>881</height>
+     <x>560</x>
+     <y>760</y>
+     <width>471</width>
+     <height>871</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;자유운동&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/자유운동하기 그룹.png);
-color: rgb(255, 255, 255)</string>
+    <string notr="true">background-color: rgb(54, 54, 54);
+
+color: rgb(255, 255, 255);
+
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>자유 운동하기</string>
+    <string>
+
+
+
+자유운동</string>
    </property>
   </widget>
   <widget class="QPushButton" name="tip_btn">
    <property name="geometry">
     <rect>
      <x>860</x>
-     <y>1680</y>
-     <width>101</width>
-     <height>111</height>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/팁버튼.png);
+    <string notr="true">image: url(img/info_btn.png);
 color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
-    <string>?</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="logout_btn">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>220</y>
-     <width>281</width>
-     <height>91</height>
+     <x>70</x>
+     <y>120</y>
+     <width>211</width>
+     <height>81</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/로그아웃 버튼.png);
+    <string notr="true">
+border-radius: 15px;
 color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>Log Out</string>
+    <string>LOGOUT</string>
    </property>
   </widget>
   <widget class="QPushButton" name="home_btn">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>1656</y>
+     <x>460</x>
+     <y>1700</y>
      <width>121</width>
-     <height>141</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/홈버튼 그룹.png);
+    <string notr="true">image: url(img/home_btn.png);
 color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
-    <string>HOME</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="ai_btn">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>670</y>
-     <width>361</width>
-     <height>881</height>
+     <x>50</x>
+     <y>760</y>
+     <width>461</width>
+     <height>871</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>22</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border-image: url(:/button/ai trainer 그룹.png);
-color: rgb(255, 255, 255)</string>
+color: rgb(0,0,0);
+background-color: rgb(124, 251, 217);
+
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>AI TRAINER</string>
+    <string>
+
+
+
+AI TRAINER</string>
    </property>
   </widget>
+  <widget class="QLabel" name="datetime_lb">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>10</y>
+     <width>401</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>날짜, 시간</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Virtual Fitness</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1081</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/todayback_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>1110</y>
+     <width>131</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/aiemoticon_2.png);
+background-color: rgb(124, 251, 217);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>1110</y>
+     <width>131</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/freeemoticon_2.png);
+background-color: rgb(54, 54, 54);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>free_btn</zorder>
+  <zorder>back_btn</zorder>
+  <zorder>tip_btn</zorder>
+  <zorder>home_btn</zorder>
+  <zorder>ai_btn</zorder>
+  <zorder>datetime_lb</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>logout_btn</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources/>
  <connections/>

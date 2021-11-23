@@ -4,7 +4,7 @@ import os
 import cv2
 from PyQt5 import uic, QtCore
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl
+from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl, QDateTime
 from PyQt5.QtGui import QImage, QPixmap, QMovie
 from PyQt5.QtWidgets import QDialog, QApplication, QScrollArea, QWidget
 from PyQt5 import QtWebEngineWidgets
@@ -68,11 +68,13 @@ def go6Page():
 def goHomePage(num):
     widget.setCurrentIndex(widget.currentIndex()-int(num))
 
+
 #1 키패드 페이지
 class KeypadPage(QDialog, keypadPage):
     def __init__(self):
         super(KeypadPage, self).__init__()
         self.setupUi(self)
+
 
 #1 로그인 페이지
 class LoginPage(QDialog, loginPage):
@@ -83,9 +85,18 @@ class LoginPage(QDialog, loginPage):
         self.login_btn.clicked.connect(self.loginKeypadPage)
         self.pass_btn.clicked.connect(goNextPage)
 
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+        self.datetime_lb.repaint()
+
+
     def loginKeypadPage(self):
         keypadPage = KeypadPage()
         keypadPage.exec_()
+
+
+
+
 
 #2 ai free 선택 페이지
 class AiFreePage(QDialog, aiFreePage):

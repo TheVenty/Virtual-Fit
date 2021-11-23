@@ -26,33 +26,49 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(46, 52, 54);
+   <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QPushButton" name="volume_btn">
    <property name="geometry">
     <rect>
      <x>450</x>
-     <y>1660</y>
-     <width>111</width>
-     <height>111</height>
+     <y>1460</y>
+     <width>201</width>
+     <height>221</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/muteon_1.png);</string>
+   </property>
    <property name="text">
-    <string>PushButton</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="pass_btn">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>910</y>
-     <width>431</width>
-     <height>81</height>
+     <x>120</x>
+     <y>990</y>
+     <width>841</width>
+     <height>121</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>26</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);border-image: url(:/button/패스버튼.png);</string>
+    <string notr="true">color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-color: rgb(255, 255, 255);
+border-radius: 15px;</string>
    </property>
    <property name="text">
     <string>비회원으로 시작하기</string>
@@ -61,17 +77,103 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="login_btn">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>760</y>
-     <width>431</width>
-     <height>81</height>
+     <x>120</x>
+     <y>820</y>
+     <width>841</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0,0,0);
+background-color: rgb(124, 251, 217);
+
+border-radius: 15px;</string>
+   </property>
+   <property name="text">
+    <string>회원번호 입력하기</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="datetime_lb">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>10</y>
+     <width>401</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>날짜, 시간</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_lb">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>720</y>
+     <width>191</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>36</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>LOG IN</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Virtual Fitness</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="marketing_video">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>80</y>
+     <width>1000</width>
+     <height>600</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);border-image: url(:/button/입력창 버튼.png);</string>
+    <string notr="true">background-color: rgb(91, 91, 91);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>회원번호를 입력하세요</string>
+    <string>View</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>
