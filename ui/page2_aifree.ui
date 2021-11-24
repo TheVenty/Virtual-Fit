@@ -166,28 +166,6 @@ border-radius: 15px;</string>
 AI TRAINER</string>
    </property>
   </widget>
-  <widget class="QLabel" name="datetime_lb">
-   <property name="geometry">
-    <rect>
-     <x>650</x>
-     <y>10</y>
-     <width>401</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>HY견고딕</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>날짜, 시간</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -260,17 +238,36 @@ background-color: rgb(54, 54, 54);</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="datetime_lb">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>10</y>
+     <width>451</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>날짜, 시간</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>free_btn</zorder>
   <zorder>back_btn</zorder>
   <zorder>tip_btn</zorder>
   <zorder>home_btn</zorder>
   <zorder>ai_btn</zorder>
-  <zorder>datetime_lb</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
   <zorder>logout_btn</zorder>
   <zorder>label_4</zorder>
+  <zorder>datetime_lb</zorder>
  </widget>
  <resources/>
  <connections/>

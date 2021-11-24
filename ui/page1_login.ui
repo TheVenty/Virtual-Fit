@@ -102,9 +102,9 @@ border-radius: 15px;</string>
   <widget class="QLabel" name="datetime_lb">
    <property name="geometry">
     <rect>
-     <x>650</x>
+     <x>610</x>
      <y>10</y>
-     <width>401</width>
+     <width>451</width>
      <height>51</height>
     </rect>
    </property>

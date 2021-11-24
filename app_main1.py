@@ -13,6 +13,9 @@ from PyQt5.QtWebEngineWidgets import QWebEngineSettings
 import logging.handlers
 import mediapipe as mp
 import numpy as np
+from threading import Timer
+import time
+
 
 #로그 생성
 logger = logging.getLogger()
@@ -84,11 +87,16 @@ class LoginPage(QDialog, loginPage):
 
         self.login_btn.clicked.connect(self.loginKeypadPage)
         self.pass_btn.clicked.connect(goNextPage)
+        self.showtime()
 
+    def showtime(self):
         datetime = QDateTime.currentDateTime()
         self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
-        self.datetime_lb.repaint()
 
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
+ 
 
     def loginKeypadPage(self):
         keypadPage = KeypadPage()
