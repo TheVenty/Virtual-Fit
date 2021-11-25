@@ -44,7 +44,7 @@ try:  # 임포트 완료 - ui연결
     exercisingPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page7_exercising.ui'))[0]
     restPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page8_rest.ui'))[0]
     finishPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page9_finish.ui'))[0]
-    planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 's_planpopup.ui'))[0]
+    planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page6_planpopup.ui'))[0]
 
 except FileNotFoundError:    # kimsungsoo 경로 예외 추가
     keypadPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_keypad.ui'))[0]
@@ -57,13 +57,16 @@ except FileNotFoundError:    # kimsungsoo 경로 예외 추가
     exercisingPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page7_exercising.ui'))[0]
     restPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page8_rest.ui'))[0]
     finishPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page9_finish.ui'))[0]
-    planPopup = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 's_planpopup.ui'))[0]
+    planPopup = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page6_planpopup.ui.ui'))[0]
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
 
 def goBackPage():
     widget.setCurrentIndex(widget.currentIndex()-1)
+
+def goBack2Page():
+    widget.setCurrentIndex(widget.currentIndex()-2)
 
 def go6Page():
     widget.setCurrentIndex(widget.currentIndex() + 2)
@@ -78,6 +81,28 @@ class KeypadPage(QDialog, keypadPage):
         super(KeypadPage, self).__init__()
         self.setupUi(self)
 
+# 6-1. Plan Pop Up 창 이동 11/25 - resetPlan 버튼 누를 시 꺼짐 현상. 원인 모르겠음.
+class PlanPopup(QDialog, planPopup):
+    def __init__(self):
+        super(PlanPopup, self).__init__()
+        self.setupUi(self)
+        
+        self.reset_btn.clicked.connect(self.resetPlan)
+
+        #슬라이드 바의 시그널 사용
+        self.set_bar.valueChanged.connect(self.showSetValue)
+        self.rep_bar.valueChanged.connect(self.showRepValue)
+
+    #슬라이드 바의 시그널 이용 - 슬라이드 바의 값이 변경되면 해당 라벨에 값을 표시    
+    def showSetValue(self):
+        self.set_lb.setText(str(self.set_bar.value()))
+
+    def showRepValue(self):
+        self.rep_lb.setText(str(self.rep_bar.value()))
+
+    def resetPlan(self):
+        self.set_bar.setValue(4)
+        self.rep_bar.setValue(12)
 
 #1 로그인 페이지
 class LoginPage(QDialog, loginPage):
@@ -87,6 +112,8 @@ class LoginPage(QDialog, loginPage):
 
         self.login_btn.clicked.connect(self.loginKeypadPage)
         self.pass_btn.clicked.connect(goNextPage)
+        
+        # 상단 날짜, 시간 표시 11/25
         self.showtime()
 
     def showtime(self):
@@ -118,6 +145,17 @@ class AiFreePage(QDialog, aiFreePage):
         self.ai_btn.clicked.connect(goNextPage)
         #self.free_btn.clicked.connect(goNextPage)
 
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()        
+
 #3 운동자세 선택 페이지
 class SelExercisePage(QDialog, selExercisePage):
     def __init__(self):
@@ -127,6 +165,20 @@ class SelExercisePage(QDialog, selExercisePage):
         self.all_btn.clicked.connect(goNextPage)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(2))
+
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
+
+
+## --- 하체 전체 운동 관련 페이지 시작 ----------------------------------------------
 
 #4 자세 피드백 영상 페이지
 class PosePage(QDialog, posePage):
@@ -174,6 +226,17 @@ class PosePage(QDialog, posePage):
     def setImage2(self, image):
         self.label_4.setPixmap(QPixmap.fromImage(image))
 
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
+
 #5 트레이너 설명 페이지 삽입_211102
 class TrainerPage(QDialog, trainerPage):
     def __init__(self):
@@ -196,14 +259,26 @@ class TrainerPage(QDialog, trainerPage):
         self.gif1.start()
         self.gif2.start()
 
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
+
 #6 중량 선택 페이지 순서 수정
 class WeightPage(QDialog, weightPage):
     def __init__(self):
         super(WeightPage, self).__init__()
         self.setupUi(self)
 
-        self.setplan_btn.clicked.connect(goNextPage)
-        self.back_btn.clicked.connect(goBackPage)
+        self.startexercise_btn.clicked.connect(goNextPage)
+        self.setplan_btn.clicked.connect(self.planpopupPage)
+        self.back_btn.clicked.connect(goBack2Page)
         self.home_btn.clicked.connect(lambda: goHomePage(5))
 
 #211111_윤성근_다이얼- 라벨 연결.
@@ -212,6 +287,22 @@ class WeightPage(QDialog, weightPage):
     def showWeight(self) :
         self.kg_lb.setText(str(self.weight_dial.value()) + " KG")
 
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
+
+    def planpopupPage(self):
+        planPopup = PlanPopup()
+        planPopup.exec_()        
+
+## --- 하체 전체 운동 관련 페이지 끝 ----------------------------------------------
 
 #7 운동중 페이지
 class ExercisingPage(QDialog, exercisingPage):
@@ -222,6 +313,19 @@ class ExercisingPage(QDialog, exercisingPage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(6))
 
+
+
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
+
 #8 휴식 페이지
 class RestPage(QDialog, restPage):
     def __init__(self):
@@ -230,6 +334,17 @@ class RestPage(QDialog, restPage):
 
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(7))
+
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
+
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
+
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
 
 #9 운동 끝 페이지
 class FinishPage(QDialog, finishPage):
@@ -240,30 +355,17 @@ class FinishPage(QDialog, finishPage):
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(8))
 
+        # 상단 날짜, 시간 표시 11/25
+        self.showtime()
 
-#윤성근 운동 Plan Pop Up 창 삽입_211014 - resetPlan 버튼 누를 시 꺼짐 현상. 원인 모르겠음.
-class PlanPopup(QDialog, planPopup):
-    def __init__(self):
-        super(PlanPopup, self).__init__()
-        self.setupUi(self)
+    def showtime(self):
+        datetime = QDateTime.currentDateTime()
+        self.datetime_lb.setText(datetime.toString(Qt.DefaultLocaleLongDate))
 
-        self.back_btn.clicked.connect(goBackPage)
-        self.reset_btn.clicked.connect(self.resetPlan)
+        # 타이머 설정  (1초마다, 콜백함수)
+        timer = Timer(1, self.showtime)
+        timer.start()
 
-        #슬라이드 바의 시그널 사용
-        self.set_bar.valueChanged.connect(self.showSetValue)
-        self.rep_bar.valueChanged.connect(self.showRepValue)
-
-    #슬라이드 바의 시그널 이용 - 슬라이드 바의 값이 변경되면 해당 라벨에 값을 표시    
-    def showSetValue(self):
-     self.set_lb.setText(str(self.set_bar.value()))
-
-    def showRepValue(self):
-        self.rep_lb.setText(str(self.rep_bar.value()))
-
-    def resetPlan(self):
-        self.set_lb.setValue(4)
-        self.rep_lb.setValue(12)
 
 class StreamingThread(QThread):
     changePixmap = pyqtSignal(QImage)
@@ -492,7 +594,7 @@ if __name__ == '__main__':
     exercisingPage = ExercisingPage()
     restpage = RestPage()
     fisishpage = FinishPage()
-    planPopup = PlanPopup()
+
     
     #widget에 모든 페이지 추가
     widget.addWidget(loginPage)
@@ -504,7 +606,7 @@ if __name__ == '__main__':
     widget.addWidget(exercisingPage)
     widget.addWidget(restpage)
     widget.addWidget(fisishpage)
-    widget.addWidget(planPopup)  
+
 
     #widget 크기와 보여주는 함수
     widget.setFixedHeight(1920)  # 높이

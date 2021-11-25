@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(46, 52, 54);</string>
+background-color: rgb(0,0,0);</string>
   </property>
   <widget class="QPushButton" name="mute_btn">
    <property name="geometry">
@@ -55,65 +55,118 @@ background-color: rgb(46, 52, 54);</string>
     <string>Show over video</string>
    </property>
   </widget>
-  <widget class="QLabel" name="kg_lb">
+  <widget class="QLabel" name="datetime_lb">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>10</y>
+     <width>451</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>날짜, 시간</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Virtual Fitness</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="kg_lb_2">
    <property name="geometry">
     <rect>
      <x>450</x>
-     <y>80</y>
+     <y>160</y>
      <width>291</width>
      <height>121</height>
     </rect>
    </property>
-   <property name="text">
-    <string>kg label</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tip_btn">
-   <property name="geometry">
-    <rect>
-     <x>810</x>
-     <y>1740</y>
-     <width>91</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/팁버튼.png);</string>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>48</pointsize>
+    </font>
    </property>
    <property name="text">
-    <string>TIP</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="back_btn">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>1760</y>
-     <width>91</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/뒤로가기 그룹.png);</string>
-   </property>
-   <property name="text">
-    <string>BACK</string>
+    <string>KG</string>
    </property>
   </widget>
   <widget class="QPushButton" name="home_btn">
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>1730</y>
-     <width>101</width>
-     <height>131</height>
+     <y>1700</y>
+     <width>121</width>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/홈버튼 그룹.png);</string>
+    <string notr="true">image: url(img/home_btn.png);
+color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
-    <string>HOME</string>
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_btn">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/back_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tip_btn">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/info_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

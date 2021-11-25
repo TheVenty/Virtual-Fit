@@ -26,8 +26,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0,0,0);</string>
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
   </property>
   <widget class="QLabel" name="datetime_lb">
    <property name="geometry">
@@ -51,7 +50,7 @@ background-color: rgb(0,0,0);</string>
     <string>날짜, 시간</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -73,10 +72,27 @@ background-color: rgb(0,0,0);</string>
     <string>Virtual Fitness</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="back_btn">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/back_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="tip_btn">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>860</x>
      <y>1700</y>
      <width>111</width>
      <height>151</height>
@@ -93,7 +109,7 @@ color: rgb(255, 255, 255)</string>
   <widget class="QPushButton" name="home_btn">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>460</x>
      <y>1700</y>
      <width>121</width>
      <height>151</height>
@@ -105,47 +121,6 @@ color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
     <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="back_btn">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>1700</y>
-     <width>111</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(img/back_btn.png);
-color: rgb(255, 255, 255)</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="logout_btn_2">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>120</y>
-     <width>211</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>HY견고딕</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-border-radius: 15px;
-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>LOGOUT</string>
    </property>
   </widget>
  </widget>

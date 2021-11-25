@@ -253,6 +253,9 @@ background-color: rgb(54, 54, 54);</string>
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
     <string>날짜, 시간</string>
    </property>

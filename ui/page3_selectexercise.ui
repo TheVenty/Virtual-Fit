@@ -26,8 +26,8 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(46, 52, 54);</string>
+   <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QPushButton" name="all_btn">
    <property name="geometry">
@@ -39,42 +39,10 @@ background-color: rgb(46, 52, 54);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/하체 전체.png);</string>
+    <string notr="true">image: url(img/legall.png);</string>
    </property>
    <property name="text">
     <string>하체 전체 운동하기</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tip_btn">
-   <property name="geometry">
-    <rect>
-     <x>870</x>
-     <y>1750</y>
-     <width>101</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/팁버튼.png);</string>
-   </property>
-   <property name="text">
-    <string>?</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="back_btn">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>1744</y>
-     <width>101</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/뒤로가기 그룹.png);</string>
-   </property>
-   <property name="text">
-    <string>BACK</string>
    </property>
   </widget>
   <widget class="QPushButton" name="legout_btn">
@@ -144,17 +112,96 @@ background-color: rgb(46, 52, 54);</string>
   <widget class="QPushButton" name="home_btn">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>1680</y>
-     <width>141</width>
-     <height>171</height>
+     <x>470</x>
+     <y>1700</y>
+     <width>121</width>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/홈버튼 그룹.png);</string>
+    <string notr="true">image: url(img/home_btn.png);
+color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
-    <string>HOME</string>
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tip_btn">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/info_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_btn">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/back_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="datetime_lb">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>10</y>
+     <width>451</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>날짜, 시간</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Virtual Fitness</string>
    </property>
   </widget>
  </widget>

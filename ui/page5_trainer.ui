@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(46, 52, 54);</string>
+background-color: rgb(0, 0, 0);</string>
   </property>
   <widget class="QPushButton" name="mute_btn">
    <property name="geometry">
@@ -42,59 +42,11 @@ background-color: rgb(46, 52, 54);</string>
     <string>MUTE</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="tip_btn">
-   <property name="geometry">
-    <rect>
-     <x>846</x>
-     <y>1729</y>
-     <width>101</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/팁버튼.png);</string>
-   </property>
-   <property name="text">
-    <string>TIP</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="back_btn">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>1740</y>
-     <width>91</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/뒤로가기 그룹.png);</string>
-   </property>
-   <property name="text">
-    <string>BACK</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="home_btn">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>1700</y>
-     <width>111</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/홈버튼 그룹.png);</string>
-   </property>
-   <property name="text">
-    <string>HOME</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>70</y>
+     <y>80</y>
      <width>200</width>
      <height>50</height>
     </rect>
@@ -115,7 +67,7 @@ background-color: rgb(46, 52, 54);</string>
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>120</y>
+     <y>130</y>
      <width>200</width>
      <height>15</height>
     </rect>
@@ -175,10 +127,105 @@ background-color: rgb(46, 52, 54);</string>
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>200</y>
+     <y>210</y>
      <width>1000</width>
      <height>800</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Virtual Fitness</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="datetime_lb">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>10</y>
+     <width>451</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>날짜, 시간</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="home_btn">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>1700</y>
+     <width>121</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/home_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_btn">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/back_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tip_btn">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>1700</y>
+     <width>111</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/info_btn.png);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
