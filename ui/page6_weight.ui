@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1920</height>
+    <height>1867</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,21 +32,21 @@ background-color: rgb(0,0,0);</string>
   <widget class="QPushButton" name="showover_btn">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>760</y>
+     <x>60</x>
+     <y>900</y>
      <width>201</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>Show over video</string>
+    <string>상단영상 ON</string>
    </property>
   </widget>
   <widget class="QPushButton" name="mute_btn">
    <property name="geometry">
     <rect>
-     <x>840</x>
-     <y>850</y>
+     <x>60</x>
+     <y>750</y>
      <width>101</width>
      <height>81</height>
     </rect>
@@ -58,37 +58,49 @@ background-color: rgb(0,0,0);</string>
   <widget class="QPushButton" name="setplan_btn">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>1070</y>
-     <width>411</width>
-     <height>81</height>
+     <x>770</x>
+     <y>900</y>
+     <width>251</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Set Plan</string>
+    <string>운동옵션</string>
    </property>
   </widget>
   <widget class="QDial" name="weight_dial">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>840</y>
+     <x>850</x>
+     <y>700</y>
      <width>161</width>
      <height>141</height>
     </rect>
    </property>
    <property name="maximum">
-    <number>600</number>
+    <number>100</number>
    </property>
    <property name="singleStep">
     <number>10</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="wrapping">
+    <bool>false</bool>
+   </property>
+   <property name="notchTarget">
+    <double>10.000000000000000</double>
+   </property>
+   <property name="notchesVisible">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="kg_lb">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>160</y>
+     <x>420</x>
+     <y>100</y>
      <width>291</width>
      <height>121</height>
     </rect>
@@ -101,19 +113,6 @@ background-color: rgb(0,0,0);</string>
    </property>
    <property name="text">
     <string>KG</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="startexercise_btn">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>970</y>
-     <width>191</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>start</string>
    </property>
   </widget>
   <widget class="QPushButton" name="home_btn">
@@ -211,6 +210,100 @@ color: rgb(255, 255, 255)</string>
     <string>Virtual Fitness</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>750</y>
+     <width>481</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>다이얼을 돌려 원하는 무게를 설정하세요.</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBottomCameraView">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>1010</y>
+     <width>951</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTopCameraView">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>240</y>
+     <width>879</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>240</y>
+     <width>891</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="viewVertLayout">
+    <item>
+     <widget class="QTableWidget" name="weightTable">
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="columnCount">
+       <number>1</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <column/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>showover_btn</zorder>
+  <zorder>mute_btn</zorder>
+  <zorder>setplan_btn</zorder>
+  <zorder>weight_dial</zorder>
+  <zorder>kg_lb</zorder>
+  <zorder>home_btn</zorder>
+  <zorder>back_btn</zorder>
+  <zorder>tip_btn</zorder>
+  <zorder>datetime_lb</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lblBottomCameraView</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+  <zorder>lblTopCameraView</zorder>
  </widget>
  <resources/>
  <connections/>

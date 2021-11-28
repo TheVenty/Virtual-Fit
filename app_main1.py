@@ -1,12 +1,13 @@
-from logging import log
+from logging import fatal, log
 import sys
 import os
 import cv2
-from PyQt5 import uic, QtCore
+from PyQt5 import uic, QtCore, QtGui
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl, QDateTime
 from PyQt5.QtGui import QImage, QPixmap, QMovie
-from PyQt5.QtWidgets import QDialog, QApplication, QScrollArea, QWidget
+# from PyQt5.QtWidgets import QDialog, QApplication, QScrollArea, QWidget, QLabel
+from PyQt5.QtWidgets import *
 from PyQt5 import QtWebEngineWidgets
 from PyQt5 import QtWebEngineCore
 from PyQt5.QtWebEngineWidgets import QWebEngineSettings
@@ -15,6 +16,8 @@ import mediapipe as mp
 import numpy as np
 from threading import Timer
 import time
+
+from numpy.core.fromnumeric import resize
 
 
 #로그 생성
@@ -45,7 +48,7 @@ try:  # 임포트 완료 - ui연결
     restPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page8_rest.ui'))[0]
     finishPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page9_finish.ui'))[0]
     planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page6_planpopup.ui'))[0]
-
+    
 except FileNotFoundError:    # kimsungsoo 경로 예외 추가
     keypadPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_keypad.ui'))[0]
     loginPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_login.ui'))[0]
@@ -61,7 +64,7 @@ except FileNotFoundError:    # kimsungsoo 경로 예외 추가
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
-
+    
 def goBackPage():
     widget.setCurrentIndex(widget.currentIndex()-1)
 
@@ -276,19 +279,120 @@ class WeightPage(QDialog, weightPage):
         super(WeightPage, self).__init__()
         self.setupUi(self)
 
-        self.startexercise_btn.clicked.connect(goNextPage)
+        self.btn_list = []
+        self.streamingThread = StreamingThread()
+        self.TopViewFlag = False
+        # self.startexercise_btn.clicked.connect(goNextPage)
         self.setplan_btn.clicked.connect(self.planpopupPage)
         self.back_btn.clicked.connect(goBack2Page)
         self.home_btn.clicked.connect(lambda: goHomePage(5))
+        self.showover_btn.clicked.connect(self.showTopCamera)
+        self.lblTopCameraView.hide()
+        self.initweight = 10
 
-#211111_윤성근_다이얼- 라벨 연결.
-        self.weight_dial.valueChanged.connect(self.showWeight)        
+        self.weight_dial.setPageStep(100) 
+        self.weight_dial.setSingleStep(10)
+        #211111_윤성근_다이얼- 라벨 연결.
+        self.weight_dial.valueChanged.connect(self.showWeight)
+        
+        header = self.weightTable.horizontalHeader()
+        self.weightTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        # self.weightTable.horizontalHeader().hide()
+
+        # self.weightTable.setColumnCount(1)
+        # self.weightTable.setColumnWidth(0,0)
+        
+        self.initweightValue()
+
+    def initweightValue(self):
+        self.kg_lb.setText(str(self.initweight) + " KG")
+        self.weight_dial.setValue = self.initweight
+
+    def startCam(self):
+        print("topview on")
+        self.streamingThread.wait(1)
+        self.streamingThread.setRtsp(0)
+        self.streamingThread.setSize(self.lblTopCameraView.size())
+        self.streamingThread.changePixmap.connect(self.setImage)
+        self.streamingThread.start()
+        # self.show()
+
+    def stopCam(self):
+        print("topview stop")
+        # self.streamingThread.wait(1)
+        # self.streamingThread.setRtsp(0)
+        # self.streamingThread.setSize(self.lblTopCameraView.size())
+        # self.streamingThread.changePixmap.connect(self.setImage)
+        self.streamingThread.stop()
+        # self.hide()
+
+    @pyqtSlot(QImage)
+    def setImage(self, image):
+        self.lblTopCameraView.setPixmap(QPixmap.fromImage(image))
 
     def showWeight(self) :
-        self.kg_lb.setText(str(self.weight_dial.value()) + " KG")
-
+        weightValue = self.weight_dial.value()
+        
+        self.setWeightTableUI(weightValue*10)
+        
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
+    
+    def setWeightTableUI(self, v):
+        self.kg_lb.setText(str(v) + " KG")
+        self.weightTable.setRowCount(0)
+        
+        listValue = []
+        maxcnt = 5
+        minValue = 0
+        maxValue = 400
+        averageWeight = int((v/maxcnt))
+
+        # print("v:" + str(v) + "   avg:" + str(averageWeight))
+        if averageWeight < 10:
+            maxcnt = int(v/10)
+            # print("max:" + str(maxcnt))
+            for i in range(maxcnt):
+                listValue.insert(i, 10)
+                
+        else:
+            if averageWeight < 50 and averageWeight >= 10:
+                minValue = 10
+            elif averageWeight < 100 and averageWeight >=50:
+                minValue = 50
+            elif averageWeight < 200 and averageWeight >= 100:
+                minValue = 100
+            elif averageWeight >= 200:
+                minValue = 200
+            
+            totalvalue = 0
+
+            for i in range(maxcnt-1):
+                listValue.insert(i, minValue)
+                totalvalue = totalvalue + minValue
+    
+            listValue.insert(maxcnt-1, v - totalvalue)
+
+        print(listValue)
+        self.weightTable.setRowCount(len(listValue))
+
+        for i in range(len(listValue)):
+            self.weightTable.setItem(i, 0, QTableWidgetItem(str(listValue[i]) + "KG"))
+            
+            if listValue[i] >= 10 and listValue[i] < 50:
+                self.weightTable.setRowHeight(i, 10)
+            elif listValue[i] >= 50 and listValue[i] < 100:
+                self.weightTable.setRowHeight(i, 30)
+            elif listValue[i] >= 100 and listValue[i] < 200:
+                self.weightTable.setRowHeight(i, 50)
+            elif listValue[i] >= 200 and listValue[i] < 400:
+                self.weightTable.setRowHeight(i, 70)
+            else:
+                self.weightTable.setRowHeight(i, 110)
+            
+            # self.weightTable.setItem(i, 0, QtGui.QTableWidgetItem())
+            self.weightTable.item(i, 0).setBackground(QtGui.QColor(100,100,150))
 
     def showtime(self):
         datetime = QDateTime.currentDateTime()
@@ -300,7 +404,18 @@ class WeightPage(QDialog, weightPage):
 
     def planpopupPage(self):
         planPopup = PlanPopup()
-        planPopup.exec_()        
+        planPopup.exec_()
+
+    def showTopCamera(self):
+        if self.TopViewFlag :
+            self.lblTopCameraView.hide()
+            self.TopViewFlag = False
+            self.stopCam()
+        else:
+            self.lblTopCameraView.show()
+            self.TopViewFlag = True
+            self.startCam()
+            
 
 ## --- 하체 전체 운동 관련 페이지 끝 ----------------------------------------------
 
@@ -394,6 +509,7 @@ class StreamingThread(QThread):
                         
                         if success:
                             rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                            rgbImage = cv2.flip(rgbImage, 1)
                             h, w, ch = rgbImage.shape
                             bytesPerLine = ch * w
                             convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format_RGB888)
@@ -505,7 +621,7 @@ class StreamingThread2(QThread):
                     
                     
                     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    # image = cv2.flip(image, 1)
+                    image = cv2.flip(image, 1)
                     
                     results = pose.process(image)
                     
@@ -603,7 +719,7 @@ if __name__ == '__main__':
     widget.addWidget(posePage)
     widget.addWidget(trainerPage)
     widget.addWidget(weightPage)
-    widget.addWidget(exercisingPage)
+    # widget.addWidget(exercisingPage)
     widget.addWidget(restpage)
     widget.addWidget(fisishpage)
 
