@@ -221,6 +221,12 @@ class PosePage(QDialog, posePage):
         self.streamingThread2.start()
         self.show()
 
+    def stopCam(self):
+        self.streamingThread.stop()
+
+    def stopCam2(self):
+        self.streamingThread2.stop()
+
     @pyqtSlot(QImage)
     def setImage(self, image):
         self.label.setPixmap(QPixmap.fromImage(image))
@@ -295,9 +301,15 @@ class WeightPage(QDialog, weightPage):
         #211111_윤성근_다이얼- 라벨 연결.
         self.weight_dial.valueChanged.connect(self.showWeight)
         
+        self.weightTable.verticalHeader().setVisible(False) #상단 헤더 없애기
+        self.weightTable.horizontalHeader().setVisible(False) #좌측 헤더 없애기
+        
+
         header = self.weightTable.horizontalHeader()
         self.weightTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
         header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+
+
         # self.weightTable.horizontalHeader().hide()
 
         # self.weightTable.setColumnCount(1)
@@ -334,7 +346,7 @@ class WeightPage(QDialog, weightPage):
     def showWeight(self) :
         weightValue = self.weight_dial.value()
         
-        self.setWeightTableUI(weightValue*10)
+        self.setWeightTableUI(weightValue)
         
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
@@ -342,57 +354,112 @@ class WeightPage(QDialog, weightPage):
     def setWeightTableUI(self, v):
         self.kg_lb.setText(str(v) + " KG")
         self.weightTable.setRowCount(0)
-        
+        self.procWeight = 0
         listValue = []
         maxcnt = 5
-        minValue = 0
-        maxValue = 400
-        averageWeight = int((v/maxcnt))
+        minValue = v % maxcnt
+        self.idx = 0
 
+        self.procWeight = v - minValue
+        
+        def GetUnit200Value():
+            if self.idx < 4 :
+                if self.procWeight >= 200 :
+                    self.procWeight = self.procWeight - 200
+                    listValue.insert(self.idx, 200)
+                    self.idx += 1
+                    GetUnit200Value()
+            else:
+                return
+
+        def GetUnit100Value():
+            if self.idx < 4 :
+                if self.procWeight >= 100 :
+                    self.procWeight = self.procWeight - 100
+                    listValue.insert(self.idx, 100)
+                    self.idx += 1
+                    GetUnit100Value()
+            else:
+                return
+
+        def GetUnit50Value():
+            if self.idx < 4 :
+                if self.procWeight >= 50 :
+                    self.procWeight = self.procWeight - 50
+                    listValue.insert(self.idx, 50)
+                    self.idx += 1
+                    GetUnit50Value()
+            else:
+                return
+
+        def GetUnit10Value():
+            if self.idx < 4 :
+                if self.procWeight >= 10 :
+                    self.procWeight = self.procWeight - 10
+                    listValue.insert(self.idx, 10)
+                    self.idx += 1
+                    GetUnit10Value()
+            else:
+                return
+
+        def GetUnit5Value():
+            if self.idx < 4 :
+                if self.procWeight >= 5 :
+                    self.procWeight = self.procWeight - 5
+                    listValue.insert(self.idx, 5)
+                    self.idx += 1
+                    GetUnit5Value()
+            else:
+                return
         # print("v:" + str(v) + "   avg:" + str(averageWeight))
-        if averageWeight < 10:
-            maxcnt = int(v/10)
-            # print("max:" + str(maxcnt))
-            for i in range(maxcnt):
-                listValue.insert(i, 10)
-                
+        if v < 5:
+            listValue.insert(0, v)
         else:
-            if averageWeight < 50 and averageWeight >= 10:
-                minValue = 10
-            elif averageWeight < 100 and averageWeight >=50:
-                minValue = 50
-            elif averageWeight < 200 and averageWeight >= 100:
-                minValue = 100
-            elif averageWeight >= 200:
-                minValue = 200
-            
-            totalvalue = 0
-
-            for i in range(maxcnt-1):
-                listValue.insert(i, minValue)
-                totalvalue = totalvalue + minValue
-    
-            listValue.insert(maxcnt-1, v - totalvalue)
+            GetUnit200Value()
+            GetUnit100Value()
+            GetUnit50Value()
+            GetUnit10Value()
+            GetUnit5Value()
+        
+        if minValue > 0 :
+            listValue.insert(self.idx, minValue)
 
         print(listValue)
         self.weightTable.setRowCount(len(listValue))
 
         for i in range(len(listValue)):
             self.weightTable.setItem(i, 0, QTableWidgetItem(str(listValue[i]) + "KG"))
-            
-            if listValue[i] >= 10 and listValue[i] < 50:
+            color = None
+            font = None
+
+            if listValue[i] < 5:
                 self.weightTable.setRowHeight(i, 10)
-            elif listValue[i] >= 50 and listValue[i] < 100:
+                color = QtGui.QColor(100,100,150)
+                font = QtGui.QFont('Arial', 15)
+            elif listValue[i] >= 5 and listValue[i] < 10:
+                self.weightTable.setRowHeight(i, 20)
+                color = QtGui.QColor(200,100,150)
+                font = QtGui.QFont('Arial', 20)
+            elif listValue[i] >= 10 and listValue[i] < 50:
                 self.weightTable.setRowHeight(i, 30)
+                color = QtGui.QColor(100,200,150)
+                font = QtGui.QFont('Arial', 30)
+            elif listValue[i] >=50 and listValue[i] < 100:
+                self.weightTable.setRowHeight(i, 45)
+                color = QtGui.QColor(50,155,170)
+                font = QtGui.QFont('Arial', 35)
             elif listValue[i] >= 100 and listValue[i] < 200:
-                self.weightTable.setRowHeight(i, 50)
-            elif listValue[i] >= 200 and listValue[i] < 400:
-                self.weightTable.setRowHeight(i, 70)
+                self.weightTable.setRowHeight(i, 60)
+                color = QtGui.QColor(150,100,200)
+                font = QtGui.QFont('Arial', 40)
             else:
-                self.weightTable.setRowHeight(i, 110)
+                self.weightTable.setRowHeight(i, 100)
+                color = QtGui.QColor(190,250,210)
+                font = QtGui.QFont('Arial', 50)
             
-            # self.weightTable.setItem(i, 0, QtGui.QTableWidgetItem())
-            self.weightTable.item(i, 0).setBackground(QtGui.QColor(100,100,150))
+            self.weightTable.item(i, 0).setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
+            self.weightTable.item(i, 0).setFont(font) #글꼴 크기
+            self.weightTable.item(i, 0).setBackground(color)
 
     def showtime(self):
         datetime = QDateTime.currentDateTime()
@@ -524,6 +591,7 @@ class StreamingThread(QThread):
     def stop(self):
         if self.running:
             self.running = False
+            print("stop1")
         self.quit()
 
 class StreamingThread2(QThread):
@@ -535,6 +603,7 @@ class StreamingThread2(QThread):
     stage = None
 
     def __init__(self):
+        print("init")
         super().__init__()
         self.running = True
         self.camUrl = ""
@@ -610,7 +679,7 @@ class StreamingThread2(QThread):
                 min_detection_confidence=0.5,
                 min_tracking_confidence=0.5) as pose:
                 
-                while self.cap.isOpened():
+                while self.running:
                     
                     success, frame = self.cap.read()
                     
@@ -690,7 +759,7 @@ class StreamingThread2(QThread):
     def stop(self):
         if self.running:
             self.running = False
-            print("stop")
+            print("stop2")
         self.quit()
 
 #이하 main 코드
@@ -730,7 +799,16 @@ if __name__ == '__main__':
     
     widget.show()
     
+    
+    # posePage.stopCam()
+    # posePage.stopCam2()
+    # weightPage.stopCam()
+    
+    # posePage.streamingThread.requestInterruption()
+    # posePage.streamingThread2.requestInterruption()
+    # weightPage.streamingThread.requestInterruption()
     try:
         sys.exit(app.exec_())
     except:
-        print("Exiting")
+        print("Exit")
+        # print(e)
