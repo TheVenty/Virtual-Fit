@@ -32,81 +32,92 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="all_btn">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>410</y>
-     <width>251</width>
-     <height>381</height>
+     <x>70</x>
+     <y>590</y>
+     <width>461</width>
+     <height>301</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(img/legall.png);</string>
+    <string notr="true">
+border-image: url(img/legall.png);
+font: 22pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>하체 전체 운동하기</string>
+    <string>하체전체</string>
    </property>
   </widget>
   <widget class="QPushButton" name="legout_btn">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>820</y>
-     <width>261</width>
-     <height>391</height>
+     <x>70</x>
+     <y>1250</y>
+     <width>461</width>
+     <height>301</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/외측장근.png);</string>
+    <string notr="true">border-image: url(img/legout.png);
+font: 22pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>외측광근 운동하기</string>
+    <string>외측광근</string>
    </property>
   </widget>
   <widget class="QPushButton" name="legback_btn">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>410</y>
-     <width>241</width>
-     <height>381</height>
+     <x>550</x>
+     <y>590</y>
+     <width>461</width>
+     <height>301</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/허벅지 후면.png);</string>
+    <string notr="true">border-image: url(img/legback.png);
+font: 22pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>허벅지 후면 운동하기</string>
+    <string>허벅지후면</string>
    </property>
   </widget>
   <widget class="QPushButton" name="legfront_btn">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>410</y>
-     <width>261</width>
-     <height>381</height>
+     <x>70</x>
+     <y>920</y>
+     <width>461</width>
+     <height>301</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/허벅지 앞면.png);</string>
+    <string notr="true">border-image: url(img/legfront.png);
+font: 22pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>허벅지 앞면 운동하기</string>
+    <string>허벅지앞면</string>
    </property>
   </widget>
   <widget class="QPushButton" name="legin_btn">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>820</y>
-     <width>261</width>
-     <height>391</height>
+     <x>550</x>
+     <y>920</y>
+     <width>461</width>
+     <height>301</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/내전근.png);</string>
+    <string notr="true">border-image: url(img/legin.png);
+font: 22pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
    </property>
    <property name="text">
-    <string>내전근 운동하기</string>
+    <string>내전근</string>
    </property>
   </widget>
   <widget class="QPushButton" name="home_btn">
@@ -204,6 +215,99 @@ color: rgb(255, 255, 255)</string>
     <string>Virtual Fitness</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="logout_btn">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>120</y>
+     <width>211</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-radius: 15px;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>LOGOUT</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1081</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/plan_3.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>470</y>
+     <width>471</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>원하는 운동부위를 선택하세요.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1091</width>
+     <height>1611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>all_btn</zorder>
+  <zorder>legout_btn</zorder>
+  <zorder>legback_btn</zorder>
+  <zorder>legfront_btn</zorder>
+  <zorder>legin_btn</zorder>
+  <zorder>home_btn</zorder>
+  <zorder>tip_btn</zorder>
+  <zorder>back_btn</zorder>
+  <zorder>datetime_lb</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>logout_btn</zorder>
+  <zorder>label_3</zorder>
  </widget>
  <resources/>
  <connections/>

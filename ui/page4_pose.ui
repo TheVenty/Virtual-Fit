@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1867</height>
+    <height>1920</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,14 +32,16 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="trainer_btn">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>910</y>
-     <width>311</width>
+     <x>100</x>
+     <y>1000</y>
+     <width>221</width>
      <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/4.트레이너설명듣기버튼.png);</string>
+    <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 18pt &quot;HY견고딕&quot;;</string>
    </property>
    <property name="text">
     <string>TRAINER K</string>
@@ -48,26 +50,26 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="weight_btn">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>910</y>
-     <width>361</width>
-     <height>171</height>
+     <x>710</x>
+     <y>960</y>
+     <width>371</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/button/4.중량설정버튼.png);</string>
+    <string notr="true">border-image: url(img/weight_btn_4.png);</string>
    </property>
    <property name="text">
-    <string>WEIGHT</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>170</y>
-     <width>1000</width>
-     <height>600</height>
+     <x>100</x>
+     <y>440</y>
+     <width>891</width>
+     <height>491</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -84,16 +86,24 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>90</y>
+     <x>780</x>
+     <y>320</y>
      <width>200</width>
      <height>50</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <family>HY견고딕</family>
+     <pointsize>22</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);
+font: 22pt &quot;HY견고딕&quot;;</string>
    </property>
    <property name="text">
     <string>하체 전체 운동</string>
@@ -105,11 +115,15 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>140</y>
-     <width>200</width>
-     <height>15</height>
+     <x>770</x>
+     <y>390</y>
+     <width>221</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);
+font: 16pt &quot;HY견고딕&quot;;</string>
    </property>
    <property name="text">
     <string>(앞뒤 허벅지, 엉덩이)</string>
@@ -121,10 +135,10 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>1050</y>
-     <width>1000</width>
-     <height>600</height>
+     <x>-1</x>
+     <y>1140</y>
+     <width>1081</width>
+     <height>531</height>
     </rect>
    </property>
    <property name="font">
@@ -234,6 +248,76 @@ color: rgb(255, 255, 255)</string>
     <string>날짜, 시간</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>1091</width>
+     <height>1611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>1081</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/plan_3.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="logout_btn">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>110</y>
+     <width>211</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY견고딕</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-radius: 15px;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>LOGOUT</string>
+   </property>
+  </widget>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>logout_btn</zorder>
+  <zorder>trainer_btn</zorder>
+  <zorder>weight_btn</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>tip_btn</zorder>
+  <zorder>back_btn</zorder>
+  <zorder>home_btn</zorder>
+  <zorder>label_5</zorder>
+  <zorder>datetime_lb</zorder>
  </widget>
  <resources/>
  <connections/>

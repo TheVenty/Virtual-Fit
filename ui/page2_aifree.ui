@@ -260,6 +260,23 @@ background-color: rgb(54, 54, 54);</string>
     <string>날짜, 시간</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1091</width>
+     <height>1611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_5</zorder>
   <zorder>label</zorder>
   <zorder>free_btn</zorder>
   <zorder>back_btn</zorder>
