@@ -33,10 +33,10 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="volume_btn">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>1460</y>
-     <width>201</width>
-     <height>221</height>
+     <x>460</x>
+     <y>1450</y>
+     <width>151</width>
+     <height>171</height>
     </rect>
    </property>
    <property name="styleSheet">
