@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>847</height>
+    <height>1920</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,49 +32,63 @@ background-color: rgb(0,0,0);</string>
   <widget class="QPushButton" name="showover_btn">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>900</y>
+     <x>80</x>
+     <y>1570</y>
      <width>201</width>
-     <height>51</height>
+     <height>71</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(75, 75, 75);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+   </property>
    <property name="text">
-    <string>상단영상 ON</string>
+    <string>영상 ON</string>
    </property>
   </widget>
   <widget class="QPushButton" name="mute_btn">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>750</y>
+     <x>100</x>
+     <y>1410</y>
      <width>101</width>
      <height>81</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(img/muteon_5.png);
+background-color: rgb(32, 32, 32);</string>
+   </property>
    <property name="text">
-    <string>mute</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="setplan_btn">
    <property name="geometry">
     <rect>
-     <x>770</x>
-     <y>900</y>
-     <width>251</width>
-     <height>61</height>
+     <x>810</x>
+     <y>1570</y>
+     <width>201</width>
+     <height>71</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(75, 75, 75);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+   </property>
    <property name="text">
-    <string>운동옵션</string>
+    <string>운동 옵션</string>
    </property>
   </widget>
   <widget class="QDial" name="weight_dial">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>700</y>
-     <width>161</width>
-     <height>141</height>
+     <x>800</x>
+     <y>1390</y>
+     <width>191</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="maximum">
@@ -99,17 +113,25 @@ background-color: rgb(0,0,0);</string>
   <widget class="QLabel" name="kg_lb">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>100</y>
+     <x>400</x>
+     <y>240</y>
      <width>291</width>
      <height>121</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Agency FB</family>
-     <pointsize>48</pointsize>
+     <family>HY견고딕</family>
+     <pointsize>50</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 50pt &quot;HY견고딕&quot;;
+
+background-color: rgb(32, 32, 32);</string>
    </property>
    <property name="text">
     <string>KG</string>
@@ -213,30 +235,22 @@ color: rgb(255, 255, 255)</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>750</y>
+     <x>280</x>
+     <y>510</y>
      <width>481</width>
      <height>71</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0,0,0);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+   </property>
    <property name="text">
-    <string>다이얼을 돌려 원하는 무게를 설정하세요.</string>
+    <string>발판을 밀면 운동이 시작됩니다.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblBottomCameraView">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>1010</y>
-     <width>951</width>
-     <height>621</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="lblTopCameraView">
@@ -256,9 +270,9 @@ color: rgb(255, 255, 255)</string>
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>240</y>
+     <y>600</y>
      <width>891</width>
-     <height>431</height>
+     <height>761</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="viewVertLayout">
@@ -290,6 +304,60 @@ color: rgb(255, 255, 255)</string>
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1091</width>
+     <height>1611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 32, 32);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="planer_6_btn">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>110</y>
+     <width>201</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(img/plan_6,7.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>1420</y>
+     <width>511</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0,0,0);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+   </property>
+   <property name="text">
+    <string>다이얼을 돌려 원하는 무게를 설정하세요</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
   <zorder>showover_btn</zorder>
   <zorder>mute_btn</zorder>
   <zorder>setplan_btn</zorder>
@@ -301,9 +369,10 @@ color: rgb(255, 255, 255)</string>
   <zorder>datetime_lb</zorder>
   <zorder>label_5</zorder>
   <zorder>label_2</zorder>
-  <zorder>lblBottomCameraView</zorder>
   <zorder>verticalLayoutWidget</zorder>
   <zorder>lblTopCameraView</zorder>
+  <zorder>planer_6_btn</zorder>
+  <zorder>label_3</zorder>
  </widget>
  <resources/>
  <connections/>

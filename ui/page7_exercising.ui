@@ -188,8 +188,8 @@ color: rgb(255, 255, 255)</string>
   <widget class="QLabel" name="lblBottomCameraView">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>820</y>
+     <x>70</x>
+     <y>750</y>
      <width>951</width>
      <height>621</height>
     </rect>
@@ -201,8 +201,8 @@ color: rgb(255, 255, 255)</string>
   <widget class="QPushButton" name="mute_btn_2">
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>1460</y>
+     <x>80</x>
+     <y>1420</y>
      <width>101</width>
      <height>81</height>
     </rect>
@@ -229,6 +229,80 @@ background-color: rgb(32, 32, 32);</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>250</y>
+     <width>891</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="viewVertLayout">
+    <item>
+     <widget class="QTableWidget" name="weightTable_2">
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="columnCount">
+       <number>1</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <column/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="showover_btn_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>1570</y>
+     <width>201</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(75, 75, 75);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+   </property>
+   <property name="text">
+    <string>영상 ON</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setplan_btn">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>1570</y>
+     <width>201</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(75, 75, 75);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+   </property>
+   <property name="text">
+    <string>운동 옵션</string>
    </property>
   </widget>
  </widget>
