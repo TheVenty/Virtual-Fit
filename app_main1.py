@@ -1,10 +1,11 @@
 from logging import fatal, log
 import sys
 import os
+from typing import Counter
 import cv2
 from PyQt5 import uic, QtCore, QtGui
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl, QDateTime
+from PyQt5.QtCore import QObject, QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl, QDateTime
 from PyQt5.QtGui import QImage, QPixmap, QMovie
 # from PyQt5.QtWidgets import QDialog, QApplication, QScrollArea, QWidget, QLabel
 from PyQt5.QtWidgets import *
@@ -77,6 +78,9 @@ def go6Page():
 def goHomePage(num):
     widget.setCurrentIndex(widget.currentIndex()-int(num))
 
+class Communicate(QObject):
+    startCam = pyqtSignal()
+    startMediapipe = pyqtSignal()
 
 #1 키패드 페이지
 class KeypadPage(QDialog, keypadPage):
@@ -165,12 +169,16 @@ class SelExercisePage(QDialog, selExercisePage):
         super(SelExercisePage, self).__init__()
         self.setupUi(self)
 
-        self.all_btn.clicked.connect(goNextPage)
+        self.all_btn.clicked.connect(self.moveNextPage)
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(2))
 
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
+
+    def moveNextPage(self):
+        
+        goNextPage()
 
     def showtime(self):
         datetime = QDateTime.currentDateTime()
@@ -197,8 +205,8 @@ class PosePage(QDialog, posePage):
         self.streamingThread = StreamingThread()
         self.streamingThread2 = StreamingThread2()
 
-        self.startCam()
-        self.startCam2()
+        # self.startCam()
+        # self.startCam2()
 
     def startCam(self):
         print("11")
@@ -359,9 +367,9 @@ class WeightPage(QDialog, weightPage):
         maxcnt = 5
         minValue = v % maxcnt
         self.idx = 0
-
-        self.procWeight = v - minValue
         
+        self.procWeight = v - minValue
+        # print(self.procWeight)
         def GetUnit200Value():
             if self.idx < 4 :
                 if self.procWeight >= 200 :
@@ -412,19 +420,20 @@ class WeightPage(QDialog, weightPage):
             else:
                 return
         # print("v:" + str(v) + "   avg:" + str(averageWeight))
-        if v < 5:
+        if v > 0 and v < 5:
             listValue.insert(0, v)
-        else:
+        elif v >= 5:
             GetUnit200Value()
             GetUnit100Value()
             GetUnit50Value()
             GetUnit10Value()
             GetUnit5Value()
+        else:
+            return
         
-        if minValue > 0 :
-            listValue.insert(self.idx, minValue)
+        listValue.insert(self.idx, self.procWeight + minValue) #기본 바벨 기준으로 배열 추가 후에 남은 무게 추가
 
-        print(listValue)
+        # print(listValue)
         self.weightTable.setRowCount(len(listValue))
 
         for i in range(len(listValue)):
@@ -453,7 +462,7 @@ class WeightPage(QDialog, weightPage):
                 color = QtGui.QColor(150,100,200)
                 font = QtGui.QFont('Arial', 40)
             else:
-                self.weightTable.setRowHeight(i, 100)
+                self.weightTable.setRowHeight(i, 80)
                 color = QtGui.QColor(190,250,210)
                 font = QtGui.QFont('Arial', 50)
             
@@ -680,7 +689,7 @@ class StreamingThread2(QThread):
                 min_tracking_confidence=0.5) as pose:
                 
                 while self.running:
-                    
+                    print("mediapipe")
                     success, frame = self.cap.read()
                     
                     if not success:
@@ -762,6 +771,64 @@ class StreamingThread2(QThread):
             print("stop2")
         self.quit()
 
+class Window(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+    
+    def initUI(self):
+        self.scroll = QScrollArea()
+        
+        #QstackedWidget 기능 연결 및 인스턴스 생성
+        # self.widget = QtWidgets.QStackedWidget()
+        
+        loginPage = LoginPage()
+        aiFreePage = AiFreePage()
+        selExercisePage = SelExercisePage()
+        posePage = PosePage()
+        trainerPage = TrainerPage()
+        weightPage = WeightPage()
+        exercisingPage = ExercisingPage()
+        restpage = RestPage()
+        fisishpage = FinishPage()
+
+        
+        #widget에 모든 페이지 추가
+        widget.addWidget(loginPage)
+        widget.addWidget(aiFreePage)
+        widget.addWidget(selExercisePage)
+        widget.addWidget(posePage)
+        widget.addWidget(trainerPage)
+        widget.addWidget(weightPage)
+        # widget.addWidget(exercisingPage)
+        widget.addWidget(restpage)
+        widget.addWidget(fisishpage)
+
+
+        #widget 크기와 보여주는 함수
+        widget.setFixedHeight(1920)  # 높이
+        widget.setFixedWidth(1080)  # 너비
+        
+        # self.c = Communicate()
+        # self.c.startCam.connect(self.StartTopCam)
+
+        # def StartTopCam():
+        #     posePage.startCam()
+        #     posePage.startCam2()
+        # widget.show()
+        
+        #Scroll Area Properties
+        self.scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.scroll.setWidgetResizable(True)
+        self.scroll.setWidget(widget)
+
+        self.setCentralWidget(self.scroll)
+
+        self.setGeometry(0, 0, 1080, 900)
+        self.show()
+        
+        return
 #이하 main 코드
 if __name__ == '__main__':
     # Some setup for qt
@@ -769,35 +836,37 @@ if __name__ == '__main__':
 
     #QstackedWidget 기능 연결 및 인스턴스 생성
     widget = QtWidgets.QStackedWidget()
+    main = Window()
     
-    loginPage = LoginPage()
-    aiFreePage = AiFreePage()
-    selExercisePage = SelExercisePage()
-    posePage = PosePage()
-    trainerPage = TrainerPage()
-    weightPage = WeightPage()
-    exercisingPage = ExercisingPage()
-    restpage = RestPage()
-    fisishpage = FinishPage()
+    
+    # loginPage = LoginPage()
+    # aiFreePage = AiFreePage()
+    # selExercisePage = SelExercisePage()
+    # posePage = PosePage()
+    # trainerPage = TrainerPage()
+    # weightPage = WeightPage()
+    # exercisingPage = ExercisingPage()
+    # restpage = RestPage()
+    # fisishpage = FinishPage()
 
     
-    #widget에 모든 페이지 추가
-    widget.addWidget(loginPage)
-    widget.addWidget(aiFreePage)
-    widget.addWidget(selExercisePage)
-    widget.addWidget(posePage)
-    widget.addWidget(trainerPage)
-    widget.addWidget(weightPage)
-    # widget.addWidget(exercisingPage)
-    widget.addWidget(restpage)
-    widget.addWidget(fisishpage)
+    # #widget에 모든 페이지 추가
+    # widget.addWidget(loginPage)
+    # widget.addWidget(aiFreePage)
+    # widget.addWidget(selExercisePage)
+    # widget.addWidget(posePage)
+    # widget.addWidget(trainerPage)
+    # widget.addWidget(weightPage)
+    # # widget.addWidget(exercisingPage)
+    # widget.addWidget(restpage)
+    # widget.addWidget(fisishpage)
 
 
-    #widget 크기와 보여주는 함수
-    widget.setFixedHeight(1920)  # 높이
-    widget.setFixedWidth(1080)  # 너비
+    # #widget 크기와 보여주는 함수
+    # widget.setFixedHeight(1920)  # 높이
+    # widget.setFixedWidth(1080)  # 너비
     
-    widget.show()
+    # widget.show()
     
     
     # posePage.stopCam()
