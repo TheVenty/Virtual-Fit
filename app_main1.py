@@ -8,7 +8,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import QObject, QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl, QDateTime
 from PyQt5.QtGui import QColor, QImage, QPixmap, QMovie
 # from PyQt5.QtWidgets import QDialog, QApplication, QScrollArea, QWidget, QLabel
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QDialog, QAbstractItemView, QTableWidgetItem, QApplication, QScrollArea, QMainWindow
 from PyQt5 import QtWebEngineWidgets
 from PyQt5 import QtWebEngineCore
 from PyQt5.QtWebEngineWidgets import QWebEngineSettings
@@ -63,7 +63,7 @@ except FileNotFoundError:    # kimsungsoo 경로 예외 추가
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
-
+    
 def goBackPage():
     widget.setCurrentIndex(widget.currentIndex()-1)
 
@@ -121,13 +121,16 @@ class PlanPopup(QDialog, planPopup):
 
 #1 로그인 페이지
 class LoginPage(QDialog, loginPage):
+    
+
     def __init__(self):
         super(LoginPage, self).__init__()
         self.setupUi(self)
 
+        self.vid = VideoStream()
         self.login_btn.clicked.connect(self.loginKeypadPage)
         self.pass_btn.clicked.connect(goNextPage)
-
+        self.ShowMainVid()
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
 
@@ -142,6 +145,19 @@ class LoginPage(QDialog, loginPage):
     def loginKeypadPage(self):
         keypadPage = KeypadPage()
         keypadPage.exec_()
+    
+    def ShowMainVid(self):
+        vidfile = os.path.join(os.path.abspath('video/marketing_video.mp4'))
+        self.vid.wait(1000)
+        self.vid.setRtsp(vidfile)
+        self.vid.setSize(self.marketing_video.size())
+        self.vid.changePixmap.connect(self.setImage)
+        self.vid.start()
+        self.show()
+    
+    @pyqtSlot(QImage)
+    def setImage(self, image):
+        self.marketing_video.setPixmap(QPixmap.fromImage(image))
 
 #2 ai free 선택 페이지
 class AiFreePage(QDialog, aiFreePage):
@@ -901,6 +917,60 @@ class StreamingThread2(QThread):
     # def initCount(self):
     #     self.counter = 0
 
+class VideoStream(QThread):
+    changePixmap = pyqtSignal(QImage)
+
+    def __init__(self):
+        super().__init__()
+        self.running = True
+        self.camUrl = ""
+        self.Qsize = None
+        self.cap = None
+
+    def setRtsp(self, camUrl):
+        self.camUrl = camUrl
+        self.running = True
+
+    def setSize(self, Qsize):
+        self.Qsize = Qsize
+
+    def run(self):
+        try:
+            if self.camUrl != "":
+                self.cap = cv2.VideoCapture(self.camUrl)
+                print("Marketing FPS" + str(self.cap.get(cv2.CAP_PROP_FPS)))
+
+                while self.running:
+                    if self.cap.isOpened():
+                        success, frame = self.cap.read()
+
+                        if success:
+                            rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                            # rgbImage = cv2.flip(rgbImage, 1)
+                            h, w, ch = rgbImage.shape
+                            bytesPerLine = ch * w
+                            convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format_RGB888)
+                            p = convertToQtFormat.scaled(self.Qsize, Qt.KeepAspectRatio)
+                            self.changePixmap.emit(p)
+                            QApplication.processEvents()
+
+                            if cv2.waitKey(24) == ord('q'):
+                                
+                                break
+                        else:
+                            self.stop()
+            else:
+                self.stop()
+        except:
+            self.stop()
+
+    def stop(self):
+        if self.running:
+            self.running = False
+            self.cap.release()
+        self.quit()
+        print("Marketing video end")
+
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -921,7 +991,7 @@ class Window(QMainWindow):
         # exercisingPage = ExercisingPage()
         restpage = RestPage()
         fisishpage = FinishPage()
-
+        
         #widget에 모든 페이지 추가
         widget.addWidget(loginPage)
         widget.addWidget(aiFreePage)
