@@ -209,7 +209,7 @@ class PosePage(QDialog, posePage):
         # self.startCam2()
 
     def startCam(self):
-        print("startCam")
+        print("webCam on, 0")
         self.streamingThread.wait(1)
         self.streamingThread.setRtsp(0)
         self.streamingThread.setSize(self.label.size())
@@ -307,6 +307,9 @@ class WeightPage(QDialog, weightPage):
         self.showover_btn.clicked.connect(self.showTopCamera)
         self.lblTopCameraView.hide()
         self.initweight = 10
+        self.totalreq = 12
+        self.totalsettingcnt = 4
+
         self.nextflag = False
         self.setfinished = False
         self.newsetflag = False
@@ -376,8 +379,17 @@ class WeightPage(QDialog, weightPage):
     def initweightValue(self):
         self.kg_lb.setText(str(self.initweight) + " KG")
         self.weight_dial.setValue = self.initweight
-        self.totalreq = 12
-        self.totalsettingcnt = 4
+
+        self.rep_set_lb.setText(str(self.totalreq))
+        self.tbl_setcnt.setColumnCount(self.totalsettingcnt)
+        self.tbl_setcnt.setRowCount(1)
+        for i in range(self.totalsettingcnt):
+            # print(self.totalsettingcnt,i)
+            self.tbl_setcnt.setColumnWidth(i,10)
+            self.tbl_setcnt.setRowHeight(0, 90)
+            self.tbl_setcnt.setItem(0, i , QTableWidgetItem(str(i+1)))
+            self.tbl_setcnt.item(0, i).setBackground(QColor(0,0,0))
+            self.tbl_setcnt.item(0, 0).setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
 
     def planpopupPage(self):
         self.planPopup.exec_()
@@ -450,6 +462,7 @@ class WeightPage(QDialog, weightPage):
         self.nextflag = False
 
     def startCam(self):
+        print("usbCam on, 1")
         vidfile = "/Users/kalo/Desktop/vscode/testvid.mp4"
         vidfile = 1
         self.streamingThread.wait(1)
@@ -811,7 +824,7 @@ class StreamingThread2(QThread):
                         break
 
                     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    # image = cv2.flip(image, 1)
+                    image = cv2.flip(image, 1)
 
                     results = pose.process(image)
 
