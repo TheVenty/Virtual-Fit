@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1920</height>
+    <height>1867</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -211,10 +211,10 @@ border-radius: 15px;</string>
   <widget class="QLabel" name="lblTopCameraView">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>28</x>
      <y>70</y>
-     <width>1080</width>
-     <height>511</height>
+     <width>1024</width>
+     <height>576</height>
     </rect>
    </property>
    <property name="text">
@@ -262,6 +262,12 @@ border-radius: 15px;</string>
      <height>500</height>
     </rect>
    </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
    <property name="showGrid">
     <bool>false</bool>
    </property>
@@ -289,7 +295,7 @@ border-radius: 15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>1370</y>
+     <y>1360</y>
      <width>1081</width>
      <height>191</height>
     </rect>
@@ -382,99 +388,136 @@ color: rgb(124, 251, 217);
      <string>START</string>
     </property>
    </widget>
-   <widget class="QWidget" name="countBox_container" native="true">
+  </widget>
+  <widget class="QWidget" name="countBox_container" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1360</y>
+     <width>1081</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <widget class="QPushButton" name="mute_btn_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1081</width>
-      <height>191</height>
+      <x>60</x>
+      <y>50</y>
+      <width>101</width>
+      <height>81</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="mute_btn_3">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>60</y>
-       <width>101</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">image: url(img/muteon_5.png);
+    <property name="styleSheet">
+     <string notr="true">image: url(img/muteon_5.png);
 background-color: rgb(0,0,0);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="rep_count_lb">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>70</y>
-       <width>101</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 40pt &quot;HY견고딕&quot;;
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rep_count_lb">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>60</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 40pt &quot;HY견고딕&quot;;
 color: rgb(124, 251, 217);</string>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>70</y>
-       <width>101</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 36pt &quot;HY견고딕&quot;;</string>
-     </property>
-     <property name="text">
-      <string>/</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="rep_set_lb">
-     <property name="geometry">
-      <rect>
-       <x>550</x>
-       <y>70</y>
-       <width>101</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 36pt &quot;HY견고딕&quot;;</string>
-     </property>
-     <property name="text">
-      <string>12</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>60</y>
-       <width>371</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>60</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 36pt &quot;HY견고딕&quot;;</string>
+    </property>
+    <property name="text">
+     <string>/</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rep_set_lb">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>60</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 36pt &quot;HY견고딕&quot;;</string>
+    </property>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>60</y>
+      <width>300</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
 image: url(img/set_excellent_6,7.png);
 background-color: rgb(0,0,0);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_pause">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>60</y>
+      <width>150</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(75, 75, 75);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+    </property>
+    <property name="text">
+     <string>정지</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tbl_setcnt">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>50</y>
+      <width>150</width>
+      <height>100</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <zorder>kg_lb</zorder>
@@ -491,6 +534,7 @@ background-color: rgb(0,0,0);</string>
   <zorder>planer_6_btn</zorder>
   <zorder>weightTable</zorder>
   <zorder>countBox_container_2</zorder>
+  <zorder>countBox_container</zorder>
  </widget>
  <resources/>
  <connections/>
