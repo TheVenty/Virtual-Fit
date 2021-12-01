@@ -6,7 +6,7 @@ import cv2
 from PyQt5 import uic, QtCore, QtGui
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QObject, QThread, pyqtSignal, pyqtSlot, Qt, QByteArray, QUrl, QDateTime
-from PyQt5.QtGui import QImage, QPixmap, QMovie
+from PyQt5.QtGui import QColor, QImage, QPixmap, QMovie
 # from PyQt5.QtWidgets import QDialog, QApplication, QScrollArea, QWidget, QLabel
 from PyQt5.QtWidgets import *
 from PyQt5 import QtWebEngineWidgets
@@ -77,9 +77,9 @@ def goHomePage(num):
     widget.setCurrentIndex(widget.currentIndex()-int(num))
 
 class Communicate(QObject):
-    startCam = pyqtSignal()
-    startMediapipe = pyqtSignal()
-
+    state = pyqtSignal(int, str)
+    
+PoseEvnet = Communicate()
 #1 키패드 페이지
 class KeypadPage(QDialog, keypadPage):
     def __init__(self):
@@ -203,9 +203,9 @@ class PosePage(QDialog, posePage):
         self.home_btn.clicked.connect(lambda: goHomePage(3))
 
         self.streamingThread = StreamingThread()
-        self.streamingThread2 = StreamingThread2()
+        # self.streamingThread2 = StreamingThread2()
 
-        # self.startCam()
+        self.startCam()
         # self.startCam2()
 
     def startCam(self):
@@ -292,9 +292,13 @@ class WeightPage(QDialog, weightPage):
         super(WeightPage, self).__init__()
         self.setupUi(self)
         self.planPopup = PlanPopup()
-
+        self.setCnt = 0
+        self.nowreq = -1
+        self.countBox_container.hide()
+        self.start_btn_6.clicked.connect(self.startSet)
+        self.btn_pause.clicked.connect(self.pauseSet)
         self.btn_list = []
-        self.streamingThread = StreamingThread()
+        self.streamingThread = StreamingThread2()
         self.TopViewFlag = False
         # self.startexercise_btn.clicked.connect(goNextPage)
         self.setplan_btn.clicked.connect(self.planpopupPage)
@@ -303,7 +307,9 @@ class WeightPage(QDialog, weightPage):
         self.showover_btn.clicked.connect(self.showTopCamera)
         self.lblTopCameraView.hide()
         self.initweight = 10
-
+        self.nextflag = False
+        self.setfinished = False
+        self.newsetflag = False
         self.weight_dial.setPageStep(100)
         self.weight_dial.setSingleStep(10)
         #211111_윤성근_다이얼- 라벨 연결.
@@ -312,6 +318,9 @@ class WeightPage(QDialog, weightPage):
         self.weightTable.verticalHeader().setVisible(False)  # 상단 헤더 없애기
         self.weightTable.horizontalHeader().setVisible(False)  # 좌측 헤더 없애기
 
+        self.tbl_setcnt.verticalHeader().setVisible(False)  # 상단 헤더 없애기
+        self.tbl_setcnt.horizontalHeader().setVisible(False)  # 좌측 헤더 없애기
+
         header = self.weightTable.horizontalHeader()
         self.weightTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
         header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
@@ -319,26 +328,150 @@ class WeightPage(QDialog, weightPage):
         # self.weightTable.horizontalHeader().hide()
         # self.weightTable.setColumnCount(1)
         # self.weightTable.setColumnWidth(0,0)
-
+        
         self.initweightValue()
 
+    @pyqtSlot(int)
+    def GetState(self, i):
+        if self.setfinished :
+            return
+
+        self.nowreq = i
+        
+        # if i > 0:
+        #     if self.nowreq == i :
+        #         return
+        #     else:
+        #         self.nowreq = i
+        if self.totalsettingcnt >= self.setCnt:
+            if self.totalreq > self.nowreq:
+                self.rep_count_lb.setText(str(self.nowreq))
+
+            elif self.totalreq == self.nowreq:
+                # self.streamingThread.wait(100)
+               
+                self.Endthisset()
+                self.rep_count_lb.setText(str(self.nowreq))
+                
+                self.nowreq = 0
+                self.setfinished = True
+                
+                # self.streamingThread.initCount()
+                self.tbl_setcnt.item(0, self.setCnt).setBackground(QColor(255,0,0))
+                self.setCnt += 1
+
+                print(self.totalsettingcnt, self.setCnt)
+                if self.totalsettingcnt == self.setCnt:
+                    self.Endweight()
+                else:
+                    return
+            else:
+                return
+        else:
+            if self.totalsettingcnt == self.setCnt:
+                self.tbl_setcnt.item(0, self.setCnt).setBackground(QColor(255,0,0))
+                print("weight end")
+                self.Endweight()
+                
     def initweightValue(self):
         self.kg_lb.setText(str(self.initweight) + " KG")
         self.weight_dial.setValue = self.initweight
+        self.totalreq = 12
+        self.totalsettingcnt = 4
+
+    def planpopupPage(self):
+        self.planPopup.exec_()
+        print("set_bar : ", self.planPopup.set_num)
+        print("rep_bar : ", self.planPopup.req_num)
+        self.totalreq = self.planPopup.req_num
+        self.totalsettingcnt = self.planPopup.set_num
+        self.tbl_setcnt.setColumnCount(0)
+
+        self.rep_set_lb.setText(str(self.planPopup.req_num))
+        self.tbl_setcnt.setRowCount(1)
+        self.tbl_setcnt.setColumnCount(self.totalsettingcnt)
+
+        for i in range(self.totalsettingcnt):
+            # print(self.totalsettingcnt,i)
+            self.tbl_setcnt.setColumnWidth(i,10)
+            self.tbl_setcnt.setRowHeight(0, 90)
+            self.tbl_setcnt.setItem(0, i , QTableWidgetItem(str(i+1)))
+            self.tbl_setcnt.item(0, i).setBackground(QColor(0,0,0))
+            self.tbl_setcnt.item(0, 0).setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
+
+    def startSet(self):
+        self.countBox_container.show()
+        self.startCam()
+        
+
+    def pauseSet(self):
+        if self.nextflag:
+            self.setfinished = False
+            self.nextflag = False
+            self.startSet()
+        else:
+            if self.newsetflag:
+                self.countBox_container.hide()
+                self.rep_count_lb.setText(str(self.nowreq))
+                self.btn_pause.setText("정지")
+                
+                for i in range(self.totalsettingcnt):
+                    # print(self.totalsettingcnt,i)
+                    self.tbl_setcnt.setColumnWidth(i,10)
+                    self.tbl_setcnt.setRowHeight(0, 90)
+                    self.tbl_setcnt.setItem(0, i , QTableWidgetItem(str(i+1)))
+                    self.tbl_setcnt.item(0, i).setBackground(QColor(0,0,0))
+                    self.tbl_setcnt.item(0, 0).setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
+
+                self.newsetflag = False
+                self.setfinished = False
+            else:
+                self.countBox_container.hide()
+                self.stopCam()
+                self.TopViewFlag = True
+                self.showTopCamera()
+
+    def Endthisset(self):
+        self.stopCam()
+        self.TopViewFlag = True
+        self.showTopCamera()
+        self.btn_pause.setText("다음 세트 시작")
+        self.nextflag = True
+
+    def Endweight(self):
+        # self.countBox_container.hide()
+        print("weight end")
+        self.setCnt = 0
+        self.stopCam()
+        self.TopViewFlag = True
+        self.showTopCamera()
+        self.btn_pause.setText("다시하기")
+        self.newsetflag = True
+        self.nextflag = False
 
     def startCam(self):
-        print("topView on")
+        vidfile = "/Users/kalo/Desktop/vscode/testvid.mp4"
+        vidfile = 1
         self.streamingThread.wait(1)
-        self.streamingThread.setRtsp(0)
+        self.streamingThread.setRtsp(vidfile)
         self.streamingThread.setSize(self.lblTopCameraView.size())
-        self.streamingThread.changePixmap.connect(self.setImage)
+        self.streamingThread.pose_changePixmap.connect(self.setImage)
+        self.streamingThread.pose_SendState.connect(self.GetState)
         self.streamingThread.start()
-        # self.show()
+        
 
     def stopCam(self):
-        print("topView stop")
         self.streamingThread.stop()
-        # self.hide()
+        self.streamingThread.quit()
+        
+    def showTopCamera(self):
+        if self.TopViewFlag:
+            self.lblTopCameraView.hide()
+            self.TopViewFlag = False
+            
+        else:
+            self.lblTopCameraView.show()
+            self.TopViewFlag = True
 
     @pyqtSlot(QImage)
     def setImage(self, image):
@@ -469,24 +602,12 @@ class WeightPage(QDialog, weightPage):
         timer = Timer(1, self.showtime)
         timer.start()
 
-    def planpopupPage(self):
-        self.planPopup.exec_()
-        print("set_bar : ", self.planPopup.set_num)
-        print("rep_bar : ", self.planPopup.req_num)
-
     def homeClear(self):
         self.planPopup.resetPlan()
         widget.setCurrentIndex(widget.currentIndex() - 5)
 
-    def showTopCamera(self):
-        if self.TopViewFlag:
-            self.lblTopCameraView.hide()
-            self.TopViewFlag = False
-            self.stopCam()
-        else:
-            self.lblTopCameraView.show()
-            self.TopViewFlag = True
-            self.startCam()
+    
+            
 
 # --- 하체 전체 운동 관련 페이지 끝 ----------------------------------------------
 #7 운동중 페이지
@@ -596,6 +717,8 @@ class StreamingThread(QThread):
 
 class StreamingThread2(QThread):
     pose_changePixmap = pyqtSignal(QImage)
+    pose_SendState = pyqtSignal(int)
+
     global image
 
     flag = 0
@@ -618,6 +741,7 @@ class StreamingThread2(QThread):
         self.Qsize = Qsize
 
     def run(self):
+        print("START_CAM")
         def calculate_angle(a, b, c):
             a = np.array(a)  # First
             b = np.array(b)  # Mid
@@ -678,7 +802,7 @@ class StreamingThread2(QThread):
                     min_tracking_confidence=0.5) as pose:
 
                 while self.running:
-                    print("mediapipe")
+                    # print("mediapipe")
                     success, frame = self.cap.read()
 
                     if not success:
@@ -687,7 +811,7 @@ class StreamingThread2(QThread):
                         break
 
                     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    image = cv2.flip(image, 1)
+                    # image = cv2.flip(image, 1)
 
                     results = pose.process(image)
 
@@ -714,22 +838,24 @@ class StreamingThread2(QThread):
                         if angle > 150 and self.stage == 'down':
                             self.stage = "up"
                             self.counter += 1
-                        if angle < 80:
+                           
+                        if angle < 80 :
                             self.stage = "down"
+                            
                     except:
                         pass
 
                     # Render curl counter
                     # Setup status box
-                    cv2.rectangle(image, (0, 0), (225, 73), (245, 117, 16), -1)
+                    # cv2.rectangle(image, (0, 0), (225, 73), (245, 117, 16), -1)
 
                     # Rep data
-                    cv2.putText(image, 'REPS', (15, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
-                    cv2.putText(image, str(self.counter), (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 2, cv2.LINE_AA)
+                    # cv2.putText(image, 'REPS', (15, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                    # cv2.putText(image, str(self.counter), (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 2, cv2.LINE_AA)
 
                     # Stage data
-                    cv2.putText(image, 'STAGE', (65, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
-                    cv2.putText(image, self.stage, (60, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 2, cv2.LINE_AA)
+                    # cv2.putText(image, 'STAGE', (65, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                    # cv2.putText(image, self.stage, (60, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 2, cv2.LINE_AA)
 
                     mp_drawing.draw_landmarks(
                         image,
@@ -740,20 +866,27 @@ class StreamingThread2(QThread):
                     )
 
                     h, w, ch = image.shape
+                    
                     bytesPerLine = ch * w
                     convertToQtFormat = QImage(image.data, w, h, bytesPerLine, QImage.Format_RGB888)
                     p = convertToQtFormat.scaled(self.Qsize, Qt.KeepAspectRatio)
+                    # print(image.shape, self.Qsize)
                     self.pose_changePixmap.emit(p)
+                    self.pose_SendState.emit(self.counter)
                     QApplication.processEvents()
 
         else:
             self.stop()
 
     def stop(self):
+        self.counter = 0
         if self.running:
             self.running = False
-            print("stop2")
+            print("STOP_CAM")
         self.quit()
+
+    # def initCount(self):
+    #     self.counter = 0
 
 class Window(QMainWindow):
     def __init__(self):
@@ -772,7 +905,7 @@ class Window(QMainWindow):
         posePage = PosePage()
         trainerPage = TrainerPage()
         weightPage = WeightPage()
-        exercisingPage = ExercisingPage()
+        # exercisingPage = ExercisingPage()
         restpage = RestPage()
         fisishpage = FinishPage()
 
