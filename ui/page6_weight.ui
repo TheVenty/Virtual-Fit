@@ -211,53 +211,15 @@ border-radius: 15px;</string>
   <widget class="QLabel" name="lblTopCameraView">
    <property name="geometry">
     <rect>
-     <x>1000</x>
-     <y>240</y>
-     <width>879</width>
-     <height>451</height>
+     <x>0</x>
+     <y>70</y>
+     <width>1080</width>
+     <height>511</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>600</y>
-     <width>891</width>
-     <height>761</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="viewVertLayout">
-    <item>
-     <widget class="QTableWidget" name="weightTable">
-      <property name="showGrid">
-       <bool>false</bool>
-      </property>
-      <property name="cornerButtonEnabled">
-       <bool>false</bool>
-      </property>
-      <property name="columnCount">
-       <number>1</number>
-      </property>
-      <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderHighlightSections">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderVisible">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="verticalHeaderHighlightSections">
-       <bool>false</bool>
-      </attribute>
-      <column/>
-     </widget>
-    </item>
-   </layout>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
@@ -290,6 +252,114 @@ border-radius: 15px;</string>
    <property name="text">
     <string/>
    </property>
+  </widget>
+  <widget class="QTableWidget" name="weightTable">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>850</y>
+     <width>1000</width>
+     <height>500</height>
+    </rect>
+   </property>
+   <property name="showGrid">
+    <bool>false</bool>
+   </property>
+   <property name="cornerButtonEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="columnCount">
+    <number>1</number>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <column/>
+  </widget>
+  <widget class="QWidget" name="countBox_container_2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1370</y>
+     <width>1081</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <widget class="QPushButton" name="mute_btn_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>101</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(img/muteon_5.png);
+background-color: rgb(0,0,0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>60</y>
+      <width>511</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0,0,0);
+font: 20pt &quot;HY견고딕&quot;;
+border-radius: 15px;</string>
+    </property>
+    <property name="text">
+     <string>다이얼을 돌려 원하는 무게를 설정하세요</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDial" name="weight_dial">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>20</y>
+      <width>191</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="wrapping">
+     <bool>false</bool>
+    </property>
+    <property name="notchTarget">
+     <double>10.000000000000000</double>
+    </property>
+    <property name="notchesVisible">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="countBox_container" native="true">
    <property name="geometry">
@@ -385,82 +455,6 @@ background-color: rgb(0,0,0);</string>
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="countBox_container_2" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>1370</y>
-     <width>1081</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <widget class="QPushButton" name="mute_btn_4">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>60</y>
-      <width>101</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(img/muteon_5.png);
-background-color: rgb(0,0,0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>60</y>
-      <width>511</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0,0,0);
-font: 20pt &quot;HY견고딕&quot;;
-border-radius: 15px;</string>
-    </property>
-    <property name="text">
-     <string>다이얼을 돌려 원하는 무게를 설정하세요</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QDial" name="weight_dial">
-    <property name="geometry">
-     <rect>
-      <x>800</x>
-      <y>20</y>
-      <width>191</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>1000</number>
-    </property>
-    <property name="singleStep">
-     <number>10</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <property name="wrapping">
-     <bool>false</bool>
-    </property>
-    <property name="notchTarget">
-     <double>10.000000000000000</double>
-    </property>
-    <property name="notchesVisible">
-     <bool>true</bool>
-    </property>
-   </widget>
-  </widget>
   <zorder>label_4</zorder>
   <zorder>showover_btn</zorder>
   <zorder>setplan_btn</zorder>
@@ -471,11 +465,11 @@ border-radius: 15px;</string>
   <zorder>datetime_lb</zorder>
   <zorder>label_5</zorder>
   <zorder>label_2</zorder>
-  <zorder>verticalLayoutWidget</zorder>
   <zorder>lblTopCameraView</zorder>
   <zorder>planer_6_btn</zorder>
-  <zorder>countBox_container</zorder>
+  <zorder>weightTable</zorder>
   <zorder>countBox_container_2</zorder>
+  <zorder>countBox_container</zorder>
  </widget>
  <resources/>
  <connections/>
