@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1920</height>
+    <height>847</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -256,53 +256,15 @@ border-radius: 15px;</string>
   <widget class="QLabel" name="lblTopCameraView">
    <property name="geometry">
     <rect>
-     <x>1000</x>
-     <y>240</y>
-     <width>879</width>
-     <height>451</height>
+     <x>0</x>
+     <y>70</y>
+     <width>1080</width>
+     <height>511</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>600</y>
-     <width>891</width>
-     <height>761</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="viewVertLayout">
-    <item>
-     <widget class="QTableWidget" name="weightTable">
-      <property name="showGrid">
-       <bool>false</bool>
-      </property>
-      <property name="cornerButtonEnabled">
-       <bool>false</bool>
-      </property>
-      <property name="columnCount">
-       <number>1</number>
-      </property>
-      <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderHighlightSections">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderVisible">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="verticalHeaderHighlightSections">
-       <bool>false</bool>
-      </attribute>
-      <column/>
-     </widget>
-    </item>
-   </layout>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
@@ -357,6 +319,38 @@ border-radius: 15px;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QTableWidget" name="weightTable">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>850</y>
+     <width>1000</width>
+     <height>500</height>
+    </rect>
+   </property>
+   <property name="showGrid">
+    <bool>false</bool>
+   </property>
+   <property name="cornerButtonEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="columnCount">
+    <number>1</number>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <column/>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>showover_btn</zorder>
   <zorder>mute_btn</zorder>
@@ -369,10 +363,10 @@ border-radius: 15px;</string>
   <zorder>datetime_lb</zorder>
   <zorder>label_5</zorder>
   <zorder>label_2</zorder>
-  <zorder>verticalLayoutWidget</zorder>
   <zorder>lblTopCameraView</zorder>
   <zorder>planer_6_btn</zorder>
   <zorder>label_3</zorder>
+  <zorder>weightTable</zorder>
  </widget>
  <resources/>
  <connections/>
