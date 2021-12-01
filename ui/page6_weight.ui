@@ -47,23 +47,6 @@ border-radius: 15px;</string>
     <string>영상 ON</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="mute_btn">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>1410</y>
-     <width>101</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(img/muteon_5.png);
-background-color: rgb(32, 32, 32);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="setplan_btn">
    <property name="geometry">
     <rect>
@@ -80,34 +63,6 @@ border-radius: 15px;</string>
    </property>
    <property name="text">
     <string>운동 옵션</string>
-   </property>
-  </widget>
-  <widget class="QDial" name="weight_dial">
-   <property name="geometry">
-    <rect>
-     <x>800</x>
-     <y>1390</y>
-     <width>191</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>1000</number>
-   </property>
-   <property name="singleStep">
-    <number>10</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="wrapping">
-    <bool>false</bool>
-   </property>
-   <property name="notchTarget">
-    <double>10.000000000000000</double>
-   </property>
-   <property name="notchesVisible">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="kg_lb">
@@ -336,32 +291,179 @@ border-radius: 15px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QWidget" name="countBox_container" native="true">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>1420</y>
-     <width>511</width>
-     <height>71</height>
+     <x>0</x>
+     <y>1610</y>
+     <width>1081</width>
+     <height>191</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(0,0,0);
+   <widget class="QPushButton" name="mute_btn_3">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>101</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(img/muteon_5.png);
+background-color: rgb(0,0,0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rep_count_lb">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>70</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 40pt &quot;HY견고딕&quot;;
+color: rgb(124, 251, 217);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>70</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 36pt &quot;HY견고딕&quot;;</string>
+    </property>
+    <property name="text">
+     <string>/</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rep_set_lb">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>70</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 36pt &quot;HY견고딕&quot;;</string>
+    </property>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>60</y>
+      <width>371</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+image: url(img/set_excellent_6,7.png);
+background-color: rgb(0,0,0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="countBox_container_2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1370</y>
+     <width>1081</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <widget class="QPushButton" name="mute_btn_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>101</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(img/muteon_5.png);
+background-color: rgb(0,0,0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>60</y>
+      <width>511</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0,0,0);
 font: 20pt &quot;HY견고딕&quot;;
 border-radius: 15px;</string>
-   </property>
-   <property name="text">
-    <string>다이얼을 돌려 원하는 무게를 설정하세요</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
+    </property>
+    <property name="text">
+     <string>다이얼을 돌려 원하는 무게를 설정하세요</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDial" name="weight_dial">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>20</y>
+      <width>191</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="wrapping">
+     <bool>false</bool>
+    </property>
+    <property name="notchTarget">
+     <double>10.000000000000000</double>
+    </property>
+    <property name="notchesVisible">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <zorder>label_4</zorder>
   <zorder>showover_btn</zorder>
-  <zorder>mute_btn</zorder>
   <zorder>setplan_btn</zorder>
-  <zorder>weight_dial</zorder>
   <zorder>kg_lb</zorder>
   <zorder>home_btn</zorder>
   <zorder>back_btn</zorder>
@@ -372,7 +474,8 @@ border-radius: 15px;</string>
   <zorder>verticalLayoutWidget</zorder>
   <zorder>lblTopCameraView</zorder>
   <zorder>planer_6_btn</zorder>
-  <zorder>label_3</zorder>
+  <zorder>countBox_container</zorder>
+  <zorder>countBox_container_2</zorder>
  </widget>
  <resources/>
  <connections/>
