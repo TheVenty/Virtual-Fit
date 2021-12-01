@@ -17,11 +17,9 @@ import mediapipe as mp
 import numpy as np
 from threading import Timer
 import time
-
 from numpy.core.fromnumeric import resize
 
-
-#로그 생성
+# 로그 생성
 logger = logging.getLogger()
 fileMaxByte = 1024 * 1024 * 10
 formatter = logging.Formatter("%(asctime)s;[%(levelname)s];%(message)s", "%Y-%m-%d %H:%M:%S")
@@ -35,9 +33,9 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
 IMAGE_FILES = []
-BG_COLOR = (192, 192, 192) # gray
+BG_COLOR = (192, 192, 192)  # gray
 
-try:  # 임포트 완료 - ui연결
+try:  # 임포트 완료 - ui 연결
     keypadPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page1_keypad.ui'))[0]
     loginPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page1_login.ui'))[0]
     aiFreePage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page2_aifree.ui'))[0]
@@ -49,7 +47,7 @@ try:  # 임포트 완료 - ui연결
     restPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page8_rest.ui'))[0]
     finishPage = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page9_finish.ui'))[0]
     planPopup = uic.loadUiType(os.path.join(os.path.abspath('ui'), 'page6_planpopup.ui'))[0]
-    
+
 except FileNotFoundError:    # kimsungsoo 경로 예외 추가
     keypadPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_keypad.ui'))[0]
     loginPage = uic.loadUiType(os.path.join(os.path.abspath('python/Virtual-Fit/ui'), 'page1_login.ui'))[0]
@@ -65,7 +63,7 @@ except FileNotFoundError:    # kimsungsoo 경로 예외 추가
 
 def goNextPage():
     widget.setCurrentIndex(widget.currentIndex()+1)
-    
+
 def goBackPage():
     widget.setCurrentIndex(widget.currentIndex()-1)
 
@@ -93,23 +91,33 @@ class PlanPopup(QDialog, planPopup):
     def __init__(self):
         super(PlanPopup, self).__init__()
         self.setupUi(self)
-        
-        self.reset_btn.clicked.connect(self.resetPlan)
 
-        #슬라이드 바의 시그널 사용
+        self.reset_btn.clicked.connect(self.resetPlan)
+        self.save_btn.clicked.connect(self.savePlan)
+        # 슬라이드 바의 시그널 사용
         self.set_bar.valueChanged.connect(self.showSetValue)
         self.rep_bar.valueChanged.connect(self.showRepValue)
 
-    #슬라이드 바의 시그널 이용 - 슬라이드 바의 값이 변경되면 해당 라벨에 값을 표시    
+        self.set_num = ""
+        self.req_num = ""
+
+    # 슬라이드 바의 시그널 이용 - 슬라이드 바의 값이 변경되면 해당 라벨에 값을 표시
     def showSetValue(self):
         self.set_lb.setText(str(self.set_bar.value()))
 
     def showRepValue(self):
         self.rep_lb.setText(str(self.rep_bar.value()))
 
+    def savePlan(self):
+        self.set_num = self.set_bar.value()
+        self.req_num = self.rep_bar.value()
+        self.close()
+
     def resetPlan(self):
         self.set_bar.setValue(4)
         self.rep_bar.setValue(12)
+        self.set_num = self.set_bar.value()
+        self.req_num = self.rep_bar.value()
 
 #1 로그인 페이지
 class LoginPage(QDialog, loginPage):
@@ -119,7 +127,7 @@ class LoginPage(QDialog, loginPage):
 
         self.login_btn.clicked.connect(self.loginKeypadPage)
         self.pass_btn.clicked.connect(goNextPage)
-        
+
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
 
@@ -130,15 +138,10 @@ class LoginPage(QDialog, loginPage):
         # 타이머 설정  (1초마다, 콜백함수)
         timer = Timer(1, self.showtime)
         timer.start()
- 
 
     def loginKeypadPage(self):
         keypadPage = KeypadPage()
         keypadPage.exec_()
-
-
-
-
 
 #2 ai free 선택 페이지
 class AiFreePage(QDialog, aiFreePage):
@@ -161,7 +164,7 @@ class AiFreePage(QDialog, aiFreePage):
 
         # 타이머 설정  (1초마다, 콜백함수)
         timer = Timer(1, self.showtime)
-        timer.start()        
+        timer.start()
 
 #3 운동자세 선택 페이지
 class SelExercisePage(QDialog, selExercisePage):
@@ -177,7 +180,6 @@ class SelExercisePage(QDialog, selExercisePage):
         self.showtime()
 
     def moveNextPage(self):
-        
         goNextPage()
 
     def showtime(self):
@@ -188,9 +190,7 @@ class SelExercisePage(QDialog, selExercisePage):
         timer = Timer(1, self.showtime)
         timer.start()
 
-
-## --- 하체 전체 운동 관련 페이지 시작 ----------------------------------------------
-
+# --- 하체 전체 운동 관련 페이지 시작 ----------------------------------------------
 #4 자세 피드백 영상 페이지
 class PosePage(QDialog, posePage):
     def __init__(self):
@@ -209,7 +209,7 @@ class PosePage(QDialog, posePage):
         # self.startCam2()
 
     def startCam(self):
-        print("11")
+        print("startCam")
         self.streamingThread.wait(1)
         self.streamingThread.setRtsp(0)
         self.streamingThread.setSize(self.label.size())
@@ -219,8 +219,7 @@ class PosePage(QDialog, posePage):
 
     def startCam2(self):
         print("12")
-
-        # vidfile = "/Users/kalo/Desktop/vscode/python/TestProject/newtonz_legpress.mp4"
+        #vidfile = "/Users/kalo/Desktop/vscode/python/TestProject/newtonz_legpress.mp4"
         vidfile = 0
         self.streamingThread2.wait(1)
         self.streamingThread2.setRtsp(vidfile)
@@ -267,14 +266,14 @@ class TrainerPage(QDialog, trainerPage):
         self.webview.setUrl(QUrl("https://www.youtube.com/embed/FQ_A97PMrcQ?autoplay=1"))
         self.webview.setGeometry(0, 0, 1000, 800)
 
-        self.gif1 = QMovie('img/gif1.gif', QByteArray(), self)
-        self.gif2 = QMovie('img/gif2.gif', QByteArray(), self)
-
-        self.gif1_label.setMovie(self.gif1)
-        self.gif2_label.setMovie(self.gif2)
-
-        self.gif1.start()
-        self.gif2.start()
+        # self.gif1 = QMovie('img/gif1.gif', QByteArray(), self)
+        # self.gif2 = QMovie('img/gif2.gif', QByteArray(), self)
+        #
+        # self.gif1_label.setMovie(self.gif1)
+        # self.gif2_label.setMovie(self.gif2)
+        #
+        # self.gif1.start()
+        # self.gif2.start()
 
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
@@ -292,6 +291,7 @@ class WeightPage(QDialog, weightPage):
     def __init__(self):
         super(WeightPage, self).__init__()
         self.setupUi(self)
+        self.planPopup = PlanPopup()
 
         self.btn_list = []
         self.streamingThread = StreamingThread()
@@ -299,30 +299,27 @@ class WeightPage(QDialog, weightPage):
         # self.startexercise_btn.clicked.connect(goNextPage)
         self.setplan_btn.clicked.connect(self.planpopupPage)
         self.back_btn.clicked.connect(goBack2Page)
-        self.home_btn.clicked.connect(lambda: goHomePage(5))
+        self.home_btn.clicked.connect(self.homeClear)
         self.showover_btn.clicked.connect(self.showTopCamera)
         self.lblTopCameraView.hide()
         self.initweight = 10
 
-        self.weight_dial.setPageStep(100) 
+        self.weight_dial.setPageStep(100)
         self.weight_dial.setSingleStep(10)
         #211111_윤성근_다이얼- 라벨 연결.
         self.weight_dial.valueChanged.connect(self.showWeight)
-        
-        self.weightTable.verticalHeader().setVisible(False) #상단 헤더 없애기
-        self.weightTable.horizontalHeader().setVisible(False) #좌측 헤더 없애기
-        
+
+        self.weightTable.verticalHeader().setVisible(False)  # 상단 헤더 없애기
+        self.weightTable.horizontalHeader().setVisible(False)  # 좌측 헤더 없애기
 
         header = self.weightTable.horizontalHeader()
         self.weightTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
         header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
 
-
         # self.weightTable.horizontalHeader().hide()
-
         # self.weightTable.setColumnCount(1)
         # self.weightTable.setColumnWidth(0,0)
-        
+
         self.initweightValue()
 
     def initweightValue(self):
@@ -330,7 +327,7 @@ class WeightPage(QDialog, weightPage):
         self.weight_dial.setValue = self.initweight
 
     def startCam(self):
-        print("topview on")
+        print("topView on")
         self.streamingThread.wait(1)
         self.streamingThread.setRtsp(0)
         self.streamingThread.setSize(self.lblTopCameraView.size())
@@ -339,11 +336,7 @@ class WeightPage(QDialog, weightPage):
         # self.show()
 
     def stopCam(self):
-        print("topview stop")
-        # self.streamingThread.wait(1)
-        # self.streamingThread.setRtsp(0)
-        # self.streamingThread.setSize(self.lblTopCameraView.size())
-        # self.streamingThread.changePixmap.connect(self.setImage)
+        print("topView stop")
         self.streamingThread.stop()
         # self.hide()
 
@@ -351,14 +344,11 @@ class WeightPage(QDialog, weightPage):
     def setImage(self, image):
         self.lblTopCameraView.setPixmap(QPixmap.fromImage(image))
 
-    def showWeight(self) :
+    def showWeight(self):
         weightValue = self.weight_dial.value()
-        
         self.setWeightTableUI(weightValue)
-        
-        # 상단 날짜, 시간 표시 11/25
-        self.showtime()
-    
+        self.showtime()  # 상단 날짜, 시간 표시 11/25
+
     def setWeightTableUI(self, v):
         self.kg_lb.setText(str(v) + " KG")
         self.weightTable.setRowCount(0)
@@ -367,12 +357,12 @@ class WeightPage(QDialog, weightPage):
         maxcnt = 5
         minValue = v % maxcnt
         self.idx = 0
-        
         self.procWeight = v - minValue
         # print(self.procWeight)
+
         def GetUnit200Value():
-            if self.idx < 4 :
-                if self.procWeight >= 200 :
+            if self.idx < 4:
+                if self.procWeight >= 200:
                     self.procWeight = self.procWeight - 200
                     listValue.insert(self.idx, 200)
                     self.idx += 1
@@ -381,8 +371,8 @@ class WeightPage(QDialog, weightPage):
                 return
 
         def GetUnit100Value():
-            if self.idx < 4 :
-                if self.procWeight >= 100 :
+            if self.idx < 4:
+                if self.procWeight >= 100:
                     self.procWeight = self.procWeight - 100
                     listValue.insert(self.idx, 100)
                     self.idx += 1
@@ -391,8 +381,8 @@ class WeightPage(QDialog, weightPage):
                 return
 
         def GetUnit50Value():
-            if self.idx < 4 :
-                if self.procWeight >= 50 :
+            if self.idx < 4:
+                if self.procWeight >= 50:
                     self.procWeight = self.procWeight - 50
                     listValue.insert(self.idx, 50)
                     self.idx += 1
@@ -401,8 +391,8 @@ class WeightPage(QDialog, weightPage):
                 return
 
         def GetUnit10Value():
-            if self.idx < 4 :
-                if self.procWeight >= 10 :
+            if self.idx < 4:
+                if self.procWeight >= 10:
                     self.procWeight = self.procWeight - 10
                     listValue.insert(self.idx, 10)
                     self.idx += 1
@@ -411,8 +401,8 @@ class WeightPage(QDialog, weightPage):
                 return
 
         def GetUnit5Value():
-            if self.idx < 4 :
-                if self.procWeight >= 5 :
+            if self.idx < 4:
+                if self.procWeight >= 5:
                     self.procWeight = self.procWeight - 5
                     listValue.insert(self.idx, 5)
                     self.idx += 1
@@ -420,7 +410,8 @@ class WeightPage(QDialog, weightPage):
             else:
                 return
         # print("v:" + str(v) + "   avg:" + str(averageWeight))
-        if v > 0 and v < 5:
+
+        if 0 < v < 5:
             listValue.insert(0, v)
         elif v >= 5:
             GetUnit200Value()
@@ -430,8 +421,8 @@ class WeightPage(QDialog, weightPage):
             GetUnit5Value()
         else:
             return
-        
-        listValue.insert(self.idx, self.procWeight + minValue) #기본 바벨 기준으로 배열 추가 후에 남은 무게 추가
+
+        listValue.insert(self.idx, self.procWeight + minValue)  # 기본 바벨 기준으로 배열 추가 후에 남은 무게 추가
 
         # print(listValue)
         self.weightTable.setRowCount(len(listValue))
@@ -443,31 +434,31 @@ class WeightPage(QDialog, weightPage):
 
             if listValue[i] < 5:
                 self.weightTable.setRowHeight(i, 10)
-                color = QtGui.QColor(100,100,150)
+                color = QtGui.QColor(100, 100, 150)
                 font = QtGui.QFont('Arial', 15)
-            elif listValue[i] >= 5 and listValue[i] < 10:
+            elif 5 <= listValue[i] < 10:
                 self.weightTable.setRowHeight(i, 20)
-                color = QtGui.QColor(200,100,150)
+                color = QtGui.QColor(200, 100, 150)
                 font = QtGui.QFont('Arial', 20)
-            elif listValue[i] >= 10 and listValue[i] < 50:
+            elif 10 <= listValue[i] < 50:
                 self.weightTable.setRowHeight(i, 30)
-                color = QtGui.QColor(100,200,150)
+                color = QtGui.QColor(100, 200, 150)
                 font = QtGui.QFont('Arial', 30)
-            elif listValue[i] >=50 and listValue[i] < 100:
+            elif 50 <= listValue[i] < 100:
                 self.weightTable.setRowHeight(i, 45)
-                color = QtGui.QColor(50,155,170)
+                color = QtGui.QColor(50, 155, 170)
                 font = QtGui.QFont('Arial', 35)
-            elif listValue[i] >= 100 and listValue[i] < 200:
+            elif 100 <= listValue[i] < 200:
                 self.weightTable.setRowHeight(i, 60)
-                color = QtGui.QColor(150,100,200)
+                color = QtGui.QColor(150, 100, 200)
                 font = QtGui.QFont('Arial', 40)
             else:
                 self.weightTable.setRowHeight(i, 80)
-                color = QtGui.QColor(190,250,210)
+                color = QtGui.QColor(190, 250, 210)
                 font = QtGui.QFont('Arial', 50)
-            
+
             self.weightTable.item(i, 0).setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
-            self.weightTable.item(i, 0).setFont(font) #글꼴 크기
+            self.weightTable.item(i, 0).setFont(font)  # 글꼴 크기
             self.weightTable.item(i, 0).setBackground(color)
 
     def showtime(self):
@@ -479,11 +470,16 @@ class WeightPage(QDialog, weightPage):
         timer.start()
 
     def planpopupPage(self):
-        planPopup = PlanPopup()
-        planPopup.exec_()
+        self.planPopup.exec_()
+        print("set_bar : ", self.planPopup.set_num)
+        print("rep_bar : ", self.planPopup.req_num)
+
+    def homeClear(self):
+        self.planPopup.resetPlan()
+        widget.setCurrentIndex(widget.currentIndex() - 5)
 
     def showTopCamera(self):
-        if self.TopViewFlag :
+        if self.TopViewFlag:
             self.lblTopCameraView.hide()
             self.TopViewFlag = False
             self.stopCam()
@@ -491,10 +487,8 @@ class WeightPage(QDialog, weightPage):
             self.lblTopCameraView.show()
             self.TopViewFlag = True
             self.startCam()
-            
 
-## --- 하체 전체 운동 관련 페이지 끝 ----------------------------------------------
-
+# --- 하체 전체 운동 관련 페이지 끝 ----------------------------------------------
 #7 운동중 페이지
 class ExercisingPage(QDialog, exercisingPage):
     def __init__(self):
@@ -503,8 +497,6 @@ class ExercisingPage(QDialog, exercisingPage):
 
         self.back_btn.clicked.connect(goBackPage)
         self.home_btn.clicked.connect(lambda: goHomePage(6))
-
-
 
         # 상단 날짜, 시간 표시 11/25
         self.showtime()
@@ -557,7 +549,6 @@ class FinishPage(QDialog, finishPage):
         timer = Timer(1, self.showtime)
         timer.start()
 
-
 class StreamingThread(QThread):
     changePixmap = pyqtSignal(QImage)
 
@@ -582,7 +573,7 @@ class StreamingThread(QThread):
                 while self.running:
                     if self.cap.isOpened():
                         success, frame = self.cap.read()
-                        
+
                         if success:
                             rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                             rgbImage = cv2.flip(rgbImage, 1)
@@ -608,7 +599,7 @@ class StreamingThread2(QThread):
     global image
 
     flag = 0
-    counter = 0 
+    counter = 0
     stage = None
 
     def __init__(self):
@@ -627,30 +618,28 @@ class StreamingThread2(QThread):
         self.Qsize = Qsize
 
     def run(self):
-        
-        def calculate_angle(a,b,c):
-            a = np.array(a) # First
-            b = np.array(b) # Mid
-            c = np.array(c) # End
-            
+        def calculate_angle(a, b, c):
+            a = np.array(a)  # First
+            b = np.array(b)  # Mid
+            c = np.array(c)  # End
+
             radians = np.arctan2(c[1]-b[1], c[0]-b[0]) - np.arctan2(a[1]-b[1], a[0]-b[0])
             angle = np.abs(radians*180.0/np.pi)
-            
-            if angle >180.0:
-                angle = 360-angle
-                
-            return angle
 
+            if angle > 180.0:
+                angle = 360-angle
+
+            return angle
 
         if self.camUrl != "":
             self.cap = cv2.VideoCapture(self.camUrl)
-            
+
             with mp_pose.Pose(
-                static_image_mode=True,
-                model_complexity=2,
-                enable_segmentation=True,
-                min_detection_confidence=0.5) as pose:
-                
+                    static_image_mode=True,
+                    model_complexity=2,
+                    enable_segmentation=True,
+                    min_detection_confidence=0.5) as pose:
+
                 for idx, file in enumerate(IMAGE_FILES):
                     image = cv2.imread(file)
                     image_height, image_width, _ = image.shape
@@ -685,75 +674,70 @@ class StreamingThread2(QThread):
                         results.pose_world_landmarks, mp_pose.POSE_CONNECTIONS)
 
             with mp_pose.Pose(
-                min_detection_confidence=0.5,
-                min_tracking_confidence=0.5) as pose:
-                
+                    min_detection_confidence=0.5,
+                    min_tracking_confidence=0.5) as pose:
+
                 while self.running:
                     print("mediapipe")
                     success, frame = self.cap.read()
-                    
+
                     if not success:
                         print("Ignoring empty camera frame.")
                         # If loading a video, use 'break' instead of 'continue'.
                         break
-                    
-                    
+
                     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                     image = cv2.flip(image, 1)
-                    
+
                     results = pose.process(image)
-                    
+
                     image.flags.writeable = True
                     # image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
                     try:
                         landmarks = results.pose_landmarks.landmark
-                        
+
                         # Get coordinates
-                        hip = [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x,landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y]
-                        knee = [landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].x,landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].y]
-                        ankle = [landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].x,landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].y]
-                        
+                        hip = [landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].x, landmarks[mp_pose.PoseLandmark.LEFT_HIP.value].y]
+                        knee = [landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].x, landmarks[mp_pose.PoseLandmark.LEFT_KNEE.value].y]
+                        ankle = [landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].x, landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value].y]
+
                         angle = calculate_angle(hip, knee, ankle)
-                        
+
                         # Visualize angle
-                        cv2.putText(image, "Angle = " + str(round(angle, 2)), 
-                                    tuple(np.multiply(knee, [self.cap.get(3), self.cap.get(4)]).astype(int)), 
+                        cv2.putText(image, "Angle = " + str(round(angle, 2)),
+                                    tuple(np.multiply(knee, [self.cap.get(3), self.cap.get(4)]).astype(int)),
                                     cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 3, cv2.LINE_AA
                                     )
-                        
+
                         # Curl counter logic
-                        if angle > 150 and self.stage =='down':
+                        if angle > 150 and self.stage == 'down':
                             self.stage = "up"
-                            self.counter +=1
-                        if angle < 80 :
-                            self.stage="down"
+                            self.counter += 1
+                        if angle < 80:
+                            self.stage = "down"
                     except:
                         pass
-                    
+
                     # Render curl counter
                     # Setup status box
-                    cv2.rectangle(image, (0,0), (225,73), (245,117,16), -1)
+                    cv2.rectangle(image, (0, 0), (225, 73), (245, 117, 16), -1)
 
                     # Rep data
-                    cv2.putText(image, 'REPS', (15,12), 
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-                    cv2.putText(image, str(self.counter), (10,60), 
-                                cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
-                    
+                    cv2.putText(image, 'REPS', (15, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                    cv2.putText(image, str(self.counter), (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 2, cv2.LINE_AA)
+
                     # Stage data
-                    cv2.putText(image, 'STAGE', (65,12), 
-                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-                    cv2.putText(image, self.stage,(60,60), 
-                                    cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
-                    
+                    cv2.putText(image, 'STAGE', (65, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                    cv2.putText(image, self.stage, (60, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 2, cv2.LINE_AA)
+
                     mp_drawing.draw_landmarks(
-                                            image,
-                                            results.pose_landmarks,
-                                            mp_pose.POSE_CONNECTIONS,
-                                            mp_drawing.DrawingSpec(color=(245,117,66), thickness=2, circle_radius=2), 
-                                            mp_drawing.DrawingSpec(color=(245,66,230), thickness=2, circle_radius=2)
-                                            )
+                        image,
+                        results.pose_landmarks,
+                        mp_pose.POSE_CONNECTIONS,
+                        mp_drawing.DrawingSpec(color=(245, 117, 66), thickness=2, circle_radius=2),
+                        mp_drawing.DrawingSpec(color=(245, 66, 230), thickness=2, circle_radius=2)
+                    )
 
                     h, w, ch = image.shape
                     bytesPerLine = ch * w
@@ -775,13 +759,13 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-    
+
     def initUI(self):
         self.scroll = QScrollArea()
-        
+
         #QstackedWidget 기능 연결 및 인스턴스 생성
         # self.widget = QtWidgets.QStackedWidget()
-        
+
         loginPage = LoginPage()
         aiFreePage = AiFreePage()
         selExercisePage = SelExercisePage()
@@ -792,7 +776,6 @@ class Window(QMainWindow):
         restpage = RestPage()
         fisishpage = FinishPage()
 
-        
         #widget에 모든 페이지 추가
         widget.addWidget(loginPage)
         widget.addWidget(aiFreePage)
@@ -804,11 +787,10 @@ class Window(QMainWindow):
         widget.addWidget(restpage)
         widget.addWidget(fisishpage)
 
-
         #widget 크기와 보여주는 함수
         widget.setFixedHeight(1920)  # 높이
         widget.setFixedWidth(1080)  # 너비
-        
+
         # self.c = Communicate()
         # self.c.startCam.connect(self.StartTopCam)
 
@@ -816,7 +798,7 @@ class Window(QMainWindow):
         #     posePage.startCam()
         #     posePage.startCam2()
         # widget.show()
-        
+
         #Scroll Area Properties
         self.scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -827,8 +809,10 @@ class Window(QMainWindow):
 
         self.setGeometry(0, 0, 1080, 900)
         self.show()
-        
+
         return
+
+
 #이하 main 코드
 if __name__ == '__main__':
     # Some setup for qt
@@ -837,8 +821,7 @@ if __name__ == '__main__':
     #QstackedWidget 기능 연결 및 인스턴스 생성
     widget = QtWidgets.QStackedWidget()
     main = Window()
-    
-    
+
     # loginPage = LoginPage()
     # aiFreePage = AiFreePage()
     # selExercisePage = SelExercisePage()
@@ -849,7 +832,6 @@ if __name__ == '__main__':
     # restpage = RestPage()
     # fisishpage = FinishPage()
 
-    
     # #widget에 모든 페이지 추가
     # widget.addWidget(loginPage)
     # widget.addWidget(aiFreePage)
@@ -861,18 +843,16 @@ if __name__ == '__main__':
     # widget.addWidget(restpage)
     # widget.addWidget(fisishpage)
 
-
     # #widget 크기와 보여주는 함수
     # widget.setFixedHeight(1920)  # 높이
     # widget.setFixedWidth(1080)  # 너비
-    
+
     # widget.show()
-    
-    
+
     # posePage.stopCam()
     # posePage.stopCam2()
     # weightPage.stopCam()
-    
+
     # posePage.streamingThread.requestInterruption()
     # posePage.streamingThread2.requestInterruption()
     # weightPage.streamingThread.requestInterruption()
